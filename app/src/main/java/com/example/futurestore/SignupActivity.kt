@@ -34,9 +34,9 @@ class SignupActivity : AppCompatActivity() {
                 if(password==passwordConfirm){
                     if(signup_activity_privacy_check_box.isChecked){
                         auth.createUserWithEmailAndPassword(email,password).addOnSuccessListener {
-                            var uid=auth.uid
+                            var uid=auth.uid.toString()
                             var reference=database.reference.child("users/$uid")
-                            reference.setValue(UserInformation(name,email,phone))
+                            reference.setValue(UserInformation(uid,name,email,phone))
                             Toast.makeText(this,"تم التسجيل بنجاح",Toast.LENGTH_SHORT).show()
 
                             var mainIntent=Intent(this,MainActivity::class.java)
@@ -59,7 +59,6 @@ class SignupActivity : AppCompatActivity() {
 
         signup_activity_goto_signin_text_view.setOnClickListener(){
             var intent=Intent(this,SigninActivity::class.java)
-            intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
 

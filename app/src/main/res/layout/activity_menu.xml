@@ -46,31 +46,30 @@
         android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:text="عبدالله بن عبدالإله"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/menu_activity_cart_button"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-        app:layout_constraintEnd_toStartOf="@+id/imageView15"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_activity_wish_list_button"
+        app:layout_constraintEnd_toStartOf="@+id/menu_activity_wish_list_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/menu_activity_wish_list_button"
         app:srcCompat="@drawable/icons8_add_shopping_cart_80px" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/menu_activity_wish_list_button"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/menu_activity_cart_button"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         app:srcCompat="@drawable/icons8_heart_80px" />
 
@@ -83,10 +82,10 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15">
+        app:layout_constraintTop_toBottomOf="@+id/menu_activity_wish_list_button">
 
         <TextView
-            android:id="@+id/textView32"
+            android:id="@+id/menu_activity_computer_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -99,7 +98,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView35"
+            android:id="@+id/menu_activity_laptop_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -112,7 +111,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView36"
+            android:id="@+id/menu_activity_console_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -125,7 +124,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView37"
+            android:id="@+id/menu_activity_program_and_game_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -138,7 +137,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView38"
+            android:id="@+id/menu_activity_buy_and_sale_accounts_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/Default3"
@@ -175,7 +174,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView40"
+            android:id="@+id/menu_activity_chat_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/Default3"
@@ -188,36 +187,36 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView16"
+        android:id="@+id/menu_activity_web_button"
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toStartOf="@+id/imageView17"
+        app:layout_constraintEnd_toStartOf="@+id/menu_activity_twitter_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/icons8_website_80px" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/menu_activity_twitter_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-        app:layout_constraintEnd_toStartOf="@+id/imageView18"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_activity_web_button"
+        app:layout_constraintEnd_toStartOf="@+id/menu_activity_instagram_button"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView16"
-        app:layout_constraintTop_toTopOf="@+id/imageView16"
+        app:layout_constraintStart_toEndOf="@+id/menu_activity_web_button"
+        app:layout_constraintTop_toTopOf="@+id/menu_activity_web_button"
         app:srcCompat="@drawable/icons8_twitter_80px" />
 
     <ImageView
-        android:id="@+id/imageView18"
+        android:id="@+id/menu_activity_instagram_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView17"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_activity_twitter_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView17"
-        app:layout_constraintTop_toTopOf="@+id/imageView17"
+        app:layout_constraintStart_toEndOf="@+id/menu_activity_twitter_button"
+        app:layout_constraintTop_toTopOf="@+id/menu_activity_twitter_button"
         app:srcCompat="@drawable/icons8_instagram_80px" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

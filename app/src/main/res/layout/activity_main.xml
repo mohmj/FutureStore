@@ -86,7 +86,7 @@
             app:layout_constraintGuide_percent="0.5" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayoutGPU"
+            android:id="@+id/main_activity_gpu_categories"
             android:layout_width="0dp"
             android:layout_height="189dp"
             android:layout_marginStart="8dp"
@@ -140,7 +140,7 @@
             android:background="@drawable/category_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayoutGPU">
+            app:layout_constraintTop_toTopOf="@+id/main_activity_gpu_categories">
 
             <TextView
                 android:id="@+id/main_activity_cpu_name_text_view"
@@ -177,7 +177,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout3"
+            android:id="@+id/main_activity_motherboard_categories"
             android:layout_width="0dp"
             android:layout_height="189dp"
             android:layout_marginStart="8dp"
@@ -186,7 +186,7 @@
             android:background="@drawable/category_background"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutGPU">
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_gpu_categories">
 
             <TextView
                 android:id="@+id/textView12"
@@ -225,7 +225,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/main_activity_ram_categories"
             android:layout_width="0dp"
             android:layout_height="189dp"
             android:layout_marginStart="8dp"
@@ -233,7 +233,7 @@
             android:background="@drawable/category_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout3">
+            app:layout_constraintTop_toTopOf="@+id/main_activity_motherboard_categories">
 
             <TextView
                 android:id="@+id/textView15"
@@ -270,7 +270,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
+            android:id="@+id/main_activity_hardisks_categories"
             android:layout_width="0dp"
             android:layout_height="189dp"
             android:layout_marginStart="8dp"
@@ -280,7 +280,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_motherboard_categories">
 
             <TextView
                 android:id="@+id/textView14"
@@ -317,6 +317,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_activity_water_cooler_categories"
             android:layout_width="0dp"
             android:layout_height="189dp"
             android:layout_marginStart="8dp"
@@ -325,7 +326,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+            app:layout_constraintTop_toTopOf="@+id/main_activity_hardisks_categories">
 
             <TextView
                 android:id="@+id/textView18"
@@ -364,7 +365,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout5"
+            android:id="@+id/main_activity_air_cooler_categories"
             android:layout_width="0dp"
             android:layout_height="189dp"
             android:layout_marginStart="8dp"
@@ -373,13 +374,13 @@
             android:background="@drawable/category_background"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_hardisks_categories">
 
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="المبردات المائية"
+                android:text="المبردات الهوائية"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -411,7 +412,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout6"
+            android:id="@+id/main_activity_case_categories"
             android:layout_width="0dp"
             android:layout_height="189dp"
             android:layout_marginStart="8dp"
@@ -419,7 +420,7 @@
             android:background="@drawable/category_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout5">
+            app:layout_constraintTop_toTopOf="@+id/main_activity_air_cooler_categories">
 
             <TextView
                 android:id="@+id/textView24"
@@ -458,7 +459,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout8"
+            android:id="@+id/main_activity_headphone_categories"
             android:layout_width="0dp"
             android:layout_height="189dp"
             android:layout_marginStart="8dp"
@@ -467,7 +468,7 @@
             android:background="@drawable/category_background"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_air_cooler_categories">
 
             <TextView
                 android:id="@+id/textView26"
@@ -506,6 +507,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_activity_sound_card_categories"
             android:layout_width="0dp"
             android:layout_height="189dp"
             android:layout_marginStart="8dp"
@@ -513,7 +515,7 @@
             android:background="@drawable/category_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout8">
+            app:layout_constraintTop_toTopOf="@+id/main_activity_headphone_categories">
 
             <TextView
                 android:id="@+id/textView28"

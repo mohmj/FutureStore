@@ -3,13 +3,8 @@ package com.example.futurestore
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.view.menu.MenuView
-import com.squareup.picasso.Picasso
-import com.xwray.groupie.GroupAdapter
-import com.xwray.groupie.Item
-import com.xwray.groupie.ViewHolder
+import com.example.futurestore.Services.Database
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.categories.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,20 +18,47 @@ class MainActivity : AppCompatActivity() {
         }
 
         main_activity_cpu_categories.setOnClickListener(){
-            categoryCPU()
+            category("computer/CPU")
         }
-        main_activity_cpu_image_view.setOnClickListener(){
-            categoryCPU()
+        main_activity_gpu_categories.setOnClickListener(){
+            category("computer/GPU")
         }
-        main_activity_cpu_name_text_view.setOnClickListener(){
-            categoryCPU()
+        main_activity_motherboard_categories.setOnClickListener(){
+            category("computer/motherboard")
         }
+        main_activity_ram_categories.setOnClickListener(){
+            category("computer/ram")
+        }
+        main_activity_hardisks_categories.setOnClickListener(){
+            category("computer/hardisk")
+        }
+        main_activity_water_cooler_categories.setOnClickListener(){
+            category("computer/waterCooler")
+        }
+        main_activity_air_cooler_categories.setOnClickListener(){
+            category("computer/airCooler")
+        }
+        main_activity_case_categories.setOnClickListener(){
+            category("computer/case")
+        }
+        main_activity_headphone_categories.setOnClickListener(){
+            category("computer/headphone")
+        }
+        main_activity_sound_card_categories.setOnClickListener(){
+            category("computer/soundCard")
+        }
+
+
 
 
     }
 
-    fun categoryCPU(){
-        startActivity(Intent(this,ProductActivity::class.java))
+    fun category(category:String){
+        var intent=Intent(this,ProductActivity::class.java)
+       intent.putExtra(Database().category,category)
+        startActivity(intent)
     }
+
+
 }
 
