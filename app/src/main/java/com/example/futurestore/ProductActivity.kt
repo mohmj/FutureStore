@@ -1,10 +1,14 @@
 package com.example.futurestore
 
+import android.content.ClipDescription
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.futurestore.Adapters.TestProudct
+import com.example.futurestore.Models.ProductInformation
 import com.example.futurestore.Services.Database
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -51,6 +55,12 @@ class ProductActivity : AppCompatActivity() {
                     }
                 }
                 product_activity_recycler_view.adapter=adapter
+                adapter.setOnItemClickListener(){item, view ->
+                    var intent= Intent(view.context,ShowProductActivity::class.java)
+                    var producty=item as TestProudct
+                    intent.putExtra(Database().productInformation,producty.info)
+                    startActivity(intent)
+                }
             }
 
         })
@@ -62,20 +72,5 @@ class ProductActivity : AppCompatActivity() {
     }
 }
 
-@Parcelize
-class ProductInformation(var name:String, var price:String, var imageLink:String):Parcelable{
-    constructor():this("","","")
-}
 
-class TestProudct(var info:ProductInformation): Item<ViewHolder>(){
 
-    override fun getLayout(): Int {
-        return R.layout.product_item
-    }
-
-    override fun bind(viewHolder: ViewHolder, position: Int) {
-        viewHolder.itemView.product_item_name_text_view.text=info.name
-        viewHolder.itemView.product_item_price_text_view.text=info.price
-        Picasso.get().load(info.imageLink).into(viewHolder.itemView.product_item_image_view)
-    }
-}

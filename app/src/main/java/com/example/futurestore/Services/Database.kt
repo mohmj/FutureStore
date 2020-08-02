@@ -10,4 +10,5 @@ class Database (){
     var userName=Firebase.database.getReference("users/$uid/name")
 
     var category="category"
+    var productInformation="product_information"
 }
