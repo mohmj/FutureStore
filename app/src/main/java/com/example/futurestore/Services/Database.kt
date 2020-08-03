@@ -11,4 +11,5 @@ class Database (){
 
     var category="category"
     var productInformation="product_information"
+    var user_name:String=""
 }

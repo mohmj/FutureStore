@@ -21,6 +21,7 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         val uid=Firebase.auth.uid
+        menu_activity_name_text_view.text=Database().user_name
 
 
         if(uid==null) {
@@ -42,6 +43,7 @@ class MenuActivity : AppCompatActivity() {
                         if(user != null){
                             if(user.uid==uid){
                                 menu_activity_name_text_view.text=user.name
+                                Database().user_name=user.name
                             }
                         }
                     }

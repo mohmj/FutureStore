@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewManager
 import android.widget.Toast
+import com.example.futurestore.Services.Database
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_profile.*
@@ -56,6 +57,7 @@ class ProfileActivity : AppCompatActivity() {
         var mainIntent= Intent(this,MainActivity::class.java)
         mainIntent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(mainIntent)
+        Database().user_name=""
         Toast.makeText(this,"تم تسجيل الخروج بنجاح",Toast.LENGTH_SHORT).show()
     }
 

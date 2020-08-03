@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.futurestore.Models.UserInformation
+import com.example.futurestore.Services.Database
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
@@ -37,6 +38,7 @@ class SignupActivity : AppCompatActivity() {
                             var uid=auth.uid.toString()
                             var reference=database.reference.child("users/$uid")
                             reference.setValue(UserInformation(uid,name,email,phone))
+                            Database().user_name=name
                             Toast.makeText(this,"تم التسجيل بنجاح",Toast.LENGTH_SHORT).show()
 
                             var mainIntent=Intent(this,MainActivity::class.java)
