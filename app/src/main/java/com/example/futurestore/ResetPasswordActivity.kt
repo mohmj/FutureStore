@@ -23,7 +23,7 @@ class ResetPasswordActivity : AppCompatActivity() {
             var email=reset_password_activity_email_edit_text.text.toString()
             if(email.isNotEmpty()){
                 auth.sendPasswordResetEmail(email).addOnSuccessListener {
-                    Toast.makeText(this,"تم الإرسال، الرجاء التحقق من البريد الإلكتروني",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,resources.getString(R.string.send_please_check_your_email),Toast.LENGTH_SHORT).show()
                     var signinIntent= Intent(this,SigninActivity::class.java)
                     signinIntent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(signinIntent)
@@ -31,7 +31,7 @@ class ResetPasswordActivity : AppCompatActivity() {
                     Toast.makeText(this,"${it.message}",Toast.LENGTH_LONG).show()
                 }
             }else{
-                Toast.makeText(this,"تأكد من تعبئة جميع البيانات",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,resources.getString(R.string.fill_your_data),Toast.LENGTH_SHORT).show()
             }
 
         }

@@ -26,7 +26,7 @@ class SigninActivity : AppCompatActivity() {
 
             if(email.isNotEmpty() && password.isNotEmpty()){
                 auth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
-                    Toast.makeText(this,"تم تسجيل الدخول بنجاح",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,resources.getString(R.string.sign_in_successful),Toast.LENGTH_SHORT).show()
                     var mainIntent=Intent(this,MainActivity::class.java)
                     mainIntent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(mainIntent)
@@ -34,7 +34,7 @@ class SigninActivity : AppCompatActivity() {
                     Toast.makeText(this,"${it.message}",Toast.LENGTH_SHORT).show()
                 }
             }else{
-                Toast.makeText(this,"تأكد من تعبئة جميع البيانات",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,resources.getString(R.string.fill_your_data),Toast.LENGTH_SHORT).show()
             }
         }
 

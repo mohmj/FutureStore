@@ -87,34 +87,35 @@ class MainActivity : AppCompatActivity() {
         }
 
         main_activity_cpu_categories.setOnClickListener(){
-            category("computer/CPU")
+            category("computer/CPU",resources.getString(R.string.CPU))
+
         }
         main_activity_gpu_categories.setOnClickListener(){
-            category("computer/GPU")
+            category("computer/GPU",resources.getString(R.string.GPU))
         }
         main_activity_motherboard_categories.setOnClickListener(){
-            category("computer/motherboard")
+            category("computer/motherboard",resources.getString(R.string.motherboard))
         }
         main_activity_ram_categories.setOnClickListener(){
-            category("computer/ram")
+            category("computer/ram",resources.getString(R.string.ram))
         }
         main_activity_hardisks_categories.setOnClickListener(){
-            category("computer/hardisk")
+            category("computer/hardisk",resources.getString(R.string.hard_disk))
         }
         main_activity_water_cooler_categories.setOnClickListener(){
-            category("computer/waterCooler")
+            category("computer/waterCooler",resources.getString(R.string.water_cooling))
         }
         main_activity_air_cooler_categories.setOnClickListener(){
-            category("computer/airCooler")
+            category("computer/airCooler",resources.getString(R.string.air_cooling))
         }
         main_activity_case_categories.setOnClickListener(){
-            category("computer/case")
+            category("computer/case",resources.getString(R.string.cases))
         }
         main_activity_headphone_categories.setOnClickListener(){
-            category("computer/headphone")
+            category("computer/headphone",resources.getString(R.string.headphone))
         }
         main_activity_sound_card_categories.setOnClickListener(){
-            category("computer/soundCard")
+            category("computer/soundCard",resources.getString(R.string.sound_card))
         }
 
 
@@ -122,9 +123,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun category(category:String){
+    fun category(category:String,categoryTitle: String){
         var intent=Intent(this,ProductActivity::class.java)
-       intent.putExtra(Database().category,category)
+        intent.putExtra(Database().category,category)
+        intent.putExtra(Database().categoryTitle,categoryTitle)
         startActivity(intent)
     }
 

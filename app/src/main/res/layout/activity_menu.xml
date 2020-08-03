@@ -29,27 +29,31 @@
 
     <TextView
         android:id="@+id/textView30"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="12dp"
-        android:text="مرحبا"
+        android:text="@string/welcome"
+        android:textAlignment="textStart"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/menu_activity_name_text_view"
         app:layout_constraintEnd_toEndOf="@+id/menu_activity_name_text_view"
+        app:layout_constraintStart_toStartOf="@+id/menu_activity_name_text_view"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/menu_activity_name_text_view"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:textAlignment="textStart"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/menu_activity_cart_button"
@@ -92,7 +96,7 @@
             android:background="@color/Default3"
             android:padding="7dp"
             android:paddingRight="10dp"
-            android:text="الكمبيوتر"
+            android:text="@string/computer"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
@@ -105,7 +109,7 @@
             android:background="@color/Default3"
             android:padding="7dp"
             android:paddingRight="10dp"
-            android:text="اللابتوب"
+            android:text="@string/laptop"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
@@ -118,7 +122,7 @@
             android:background="@color/Default3"
             android:padding="7dp"
             android:paddingRight="10dp"
-            android:text="الكونسول"
+            android:text="@string/console"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
@@ -131,7 +135,7 @@
             android:background="@color/Default3"
             android:padding="7dp"
             android:paddingRight="10dp"
-            android:text="البرامج والألعاب"
+            android:text="@string/programs_and_games"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
@@ -143,7 +147,7 @@
             android:background="@color/Default3"
             android:padding="7dp"
             android:paddingRight="10dp"
-            android:text="بيع وشراء الحسابات"
+            android:text="@string/buy_and_sale_account"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
@@ -168,7 +172,7 @@
             android:background="@color/Default3"
             android:padding="7dp"
             android:paddingRight="10dp"
-            android:text="الحساب الشخصي"
+            android:text="@string/profile"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
@@ -180,7 +184,7 @@
             android:background="@color/Default3"
             android:padding="7dp"
             android:paddingRight="10dp"
-            android:text="تواصل معنا"
+            android:text="@string/contact_us"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textSize="24sp" />

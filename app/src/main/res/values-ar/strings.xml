@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FutureStore</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="open_drawer">Open drawer</string>
+    <string name="Close_drawer">Close drawer</string>
+    <string name="CPU">المعالجات</string>
+    <string name="GPU">كروت الشاشة</string>
+    <string name="motherboard">اللوحة الأم</string>
+    <string name="cases">الصناديق</string>
+    <string name="sound_card">كروت الصوت</string>
+    <string name="hard_disk">وحدات التحزين</string>
+    <string name="air_cooling">المبردات الهوائية</string>
+    <string name="water_cooling">المبردات المائية</string>
+    <string name="ram">الرام</string>
+    <string name="headphone">السماعات</string>
+    <string name="computer">التجميعات الجاهزة</string>
+    <string name="laptop">اللابتوبات</string>
+    <string name="console">الكونسول</string>
+    <string name="programs_and_games">البرامج والألعاب</string>
+    <string name="buy_and_sale_account">بيع وشراء الحسابات</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="contact_us">تواصل معنا</string>
+    <string name="welcome">مرحبا</string>
+    <string name="Login">تسجيل الدخول</string>
+    <string name="the_data_was_updated_successfully">تم تحديث البيانات بنجاح</string>
+    <string name="sign_out">SIGN OUT</string>
+    <string name="sign_out_successful">تم تسجيل الخروج بنجاح.</string>
+    <string name="send_please_check_your_email">تم الإرسال. الرجاء التحقق من البريد الإلكتروني</string>
+    <string name="fill_your_data">تحقق من إكمال تعبئة البيانات</string>
+    <string name="sign_in_successful">تم تسحيل الدخول بنجاح</string>
+    <string name="sign_up_successful">تم الستجيل بنجاح</string>
+    <string name="you_must_accept_the_privacy">يجب الموافقة على الشروط والأحكام</string>
+    <string name="password_does_not_match">تحقق من تطابق كلمات المرور</string>
+    <string name="name">الاسم</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="phone_number">رقم الجوال</string>
+    <string name="update_data">تحديث البيانات</string>
+    <string name="reset_password">استعادة كلمة المرور</string>
+    <string name="price">السعر: </string>
+    <string name="password">كلمة المرور</string>
+    <string name="forget_my_password">نسيت كلمة المرور</string>
+    <string name="don_t_have_an_account_registration">ليس لدك حساب؟ سجل الآن !</string>
+    <string name="login">login</string>
+    <string name="phone_number_9665123456789">رقم الجوال: 9665123456789</string>
+    <string name="confirm_password">أعد كتابة كلمة المرور</string>
+    <string name="privacy">الموافقة على الشروط والأحكمام</string>
+    <string name="already_have_an_account_login">لجيك حساب؟ تسحيل الدخول</string>
+    <string name="registreation">التسجيل</string>
+    <!--    Done translate untill here-->
+
+</resources>

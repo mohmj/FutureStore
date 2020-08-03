@@ -63,7 +63,7 @@ class PersonalDataActivity : AppCompatActivity() {
                 var reference=Firebase.database.getReference("users/$uid")
                 auth.currentUser?.updateEmail(email)?.addOnSuccessListener {
                     reference.setValue(UserInformation(uid,name,email,phoneNumber)).addOnSuccessListener {
-                        Toast.makeText(this,"تم تحديث البيانات بنجاح",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,resources.getString(R.string.the_data_was_updated_successfully),Toast.LENGTH_SHORT).show()
                         var intent= Intent(this,ProfileActivity::class.java)
                         intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)

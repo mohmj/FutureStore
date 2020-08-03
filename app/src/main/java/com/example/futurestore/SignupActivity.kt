@@ -39,7 +39,7 @@ class SignupActivity : AppCompatActivity() {
                             var reference=database.reference.child("users/$uid")
                             reference.setValue(UserInformation(uid,name,email,phone))
                             Database().user_name=name
-                            Toast.makeText(this,"تم التسجيل بنجاح",Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this,resources.getString(R.string.sign_up_successful),Toast.LENGTH_SHORT).show()
 
                             var mainIntent=Intent(this,MainActivity::class.java)
                             mainIntent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -49,13 +49,13 @@ class SignupActivity : AppCompatActivity() {
                             Toast.makeText(this,"${it.message}",Toast.LENGTH_SHORT).show()
                         }
                     }else{
-                        Toast.makeText(this,"يجب الموافقة على الشروط والأحكام",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,resources.getString(R.string.you_must_accept_the_privacy),Toast.LENGTH_SHORT).show()
                     }
                 }else{
-                    Toast.makeText(this,"كلمة المرور غير متطابقة",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,resources.getString(R.string.password_does_not_match),Toast.LENGTH_SHORT).show()
                 }
             }else{
-               Toast.makeText(this,"يج أن تملأ جميع الخانات",Toast.LENGTH_SHORT).show()
+               Toast.makeText(this,resources.getString(R.string.fill_your_data),Toast.LENGTH_SHORT).show()
             }
         }
 

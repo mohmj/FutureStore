@@ -26,7 +26,7 @@ class ProfileActivity : AppCompatActivity() {
 
         if(uid != null){
             profile_activity_big_button_background_text_view.setBackgroundResource(R.drawable.profile_signout_button)
-            profile_activity_big_button_text_view.text="تسجيل الخروج"
+            profile_activity_big_button_text_view.text=resources.getString(R.string.sign_out)
             profile_activity_big_button_background_text_view.setOnClickListener(){
                 signoutProfile()
             }
@@ -36,7 +36,7 @@ class ProfileActivity : AppCompatActivity() {
         }else{
 
             profile_activity_big_button_background_text_view.setBackgroundResource(R.drawable.profile_signin_button)
-            profile_activity_big_button_text_view.text="تسجيل الدخول"
+            profile_activity_big_button_text_view.text=resources.getString(R.string.Login)
             profile_activity_big_button_background_text_view.setOnClickListener(){
                 signinProfile()
             }
@@ -58,7 +58,7 @@ class ProfileActivity : AppCompatActivity() {
         mainIntent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(mainIntent)
         Database().user_name=""
-        Toast.makeText(this,"تم تسجيل الخروج بنجاح",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,resources.getString(R.string.sign_out_successful),Toast.LENGTH_SHORT).show()
     }
 
     fun signinProfile(){

@@ -32,7 +32,7 @@ class ProductActivity : AppCompatActivity() {
         setContentView(R.layout.activity_product)
 
         var category=intent.getStringExtra(Database().category)
-        supportActionBar?.title=category
+        supportActionBar?.title=intent.getStringExtra(Database().categoryTitle.toString())
 
         product_activity_recycler_view.layoutManager=StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
 

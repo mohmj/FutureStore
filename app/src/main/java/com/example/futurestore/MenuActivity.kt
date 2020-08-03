@@ -25,7 +25,7 @@ class MenuActivity : AppCompatActivity() {
 
 
         if(uid==null) {
-            menu_activity_name_text_view.text="تسجيل الدخول"
+            menu_activity_name_text_view.text=resources.getString(R.string.Login)
             menu_activity_name_text_view.setOnClickListener() {
                 startActivity(Intent(this, SigninActivity::class.java))
             }
@@ -65,16 +65,16 @@ class MenuActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             menu_activity_laptop_button.setOnClickListener(){
-                category("laptop")
+                category("laptop",resources.getString(R.string.laptop))
             }
             menu_activity_console_button.setOnClickListener(){
-                category("console")
+                category("console",resources.getString(R.string.console))
             }
             menu_activity_program_and_game_button.setOnClickListener(){
-                category("program_and_game")
+                category("program_and_game",resources.getString(R.string.programs_and_games))
             }
             menu_activity_buy_and_sale_accounts_button.setOnClickListener(){
-                category("buy_and_sale_account")
+                category("buy_and_sale_account",resources.getString(R.string.buy_and_sale_account))
             }
             menu_activity_instagram_button.setOnClickListener(){
                 //Nothing until now
@@ -95,9 +95,10 @@ class MenuActivity : AppCompatActivity() {
 }
 
 
-    fun category(category:String){
+    fun category(category:String, categoryTitle:String){
         var intent=Intent(this,ProductActivity::class.java)
         intent.putExtra(Database().category,category)
+        intent.putExtra(Database().categoryTitle,categoryTitle)
         startActivity(intent)
     }
 }

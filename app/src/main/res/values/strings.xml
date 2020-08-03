@@ -12,4 +12,50 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="open_drawer">Open drawer</string>
     <string name="Close_drawer">Close drawer</string>
+    <string name="CPU">CPU</string>
+    <string name="GPU">GPU</string>
+    <string name="motherboard">Motherboard</string>
+    <string name="cases">Cases</string>
+    <string name="sound_card">Sound card</string>
+    <string name="hard_disk">Hard disk</string>
+    <string name="air_cooling">Air cooling</string>
+    <string name="water_cooling">Water cooling</string>
+    <string name="ram">Ram</string>
+    <string name="headphone">Headphone</string>
+    <string name="computer">Computer</string>
+    <string name="laptop">Laptop</string>
+    <string name="console">Console</string>
+    <string name="programs_and_games">Programs and games</string>
+    <string name="buy_and_sale_account">Buy and sale account</string>
+    <string name="profile">Profile</string>
+    <string name="contact_us">Contact us</string>
+    <string name="welcome">Welcome</string>
+    <string name="Login">Sign in</string>
+    <string name="the_data_was_updated_successfully">Data is updates successfully</string>
+    <string name="sign_out">SIGN OUT</string>
+    <string name="sign_out_successful">Sign out successful.</string>
+    <string name="send_please_check_your_email">Send. Please check your email.</string>
+    <string name="fill_your_data">Please fill your data.</string>
+    <string name="sign_in_successful">Sign in successful</string>
+    <string name="sign_up_successful">Sign up successful</string>
+    <string name="you_must_accept_the_privacy">You must accept the privacy</string>
+    <string name="password_does_not_match">Password does not match</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone number</string>
+    <string name="update_data">update data</string>
+    <string name="reset_password">Reset password</string>
+    <string name="price">Price:</string>
+    <string name="password">Password</string>
+    <string name="forget_my_password">Forget my password</string>
+    <string name="don_t_have_an_account_registration">Don\'t have an account? Registration</string>
+    <string name="login">login</string>
+    <string name="phone_number_9665123456789">Phone number: 9665123456789</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="privacy">Privacy</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="registreation">Registreation</string>
+<!--    Done translate untill here-->
+
+
 </resources>
