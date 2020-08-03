@@ -33,7 +33,7 @@
     <string name="welcome">مرحبا</string>
     <string name="Login">تسجيل الدخول</string>
     <string name="the_data_was_updated_successfully">تم تحديث البيانات بنجاح</string>
-    <string name="sign_out">SIGN OUT</string>
+    <string name="sign_out">تسجيل الخروج</string>
     <string name="sign_out_successful">تم تسجيل الخروج بنجاح.</string>
     <string name="send_please_check_your_email">تم الإرسال. الرجاء التحقق من البريد الإلكتروني</string>
     <string name="fill_your_data">تحقق من إكمال تعبئة البيانات</string>

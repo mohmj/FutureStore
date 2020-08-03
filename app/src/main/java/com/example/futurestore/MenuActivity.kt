@@ -71,7 +71,7 @@ class MenuActivity : AppCompatActivity() {
                 category("console",resources.getString(R.string.console))
             }
             menu_activity_program_and_game_button.setOnClickListener(){
-                category("program_and_game",resources.getString(R.string.programs_and_games))
+                category("programs_and_games",resources.getString(R.string.programs_and_games))
             }
             menu_activity_buy_and_sale_accounts_button.setOnClickListener(){
                 category("buy_and_sale_account",resources.getString(R.string.buy_and_sale_account))
