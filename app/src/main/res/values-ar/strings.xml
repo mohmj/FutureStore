@@ -56,6 +56,8 @@
     <string name="privacy">الموافقة على الشروط والأحكمام</string>
     <string name="already_have_an_account_login">لجيك حساب؟ تسحيل الدخول</string>
     <string name="registreation">التسجيل</string>
+    <string name="desktop">التجميعات الجاهزة</string>
+    <string name="special_offer">العروض الخاصة</string>
     <!--    Done translate untill here-->
 
 </resources>

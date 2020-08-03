@@ -55,7 +55,9 @@
     <string name="privacy">Privacy</string>
     <string name="already_have_an_account_login">Already have an account? Login</string>
     <string name="registreation">Registreation</string>
-<!--    Done translate untill here-->
+    <string name="desktop">Desktop</string>
+    <string name="special_offer">Special offer</string>
+    <!--    Done translate untill here-->
 
 
 </resources>
