@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".DarkModeDialogActivity">
+
+    <TextView
+        android:id="@+id/dark_mode_activity_light_mode_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/profile_activity_item"
+        android:padding="10dp"
+        android:text="Light mode"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/dark_mode_activity_dark_mode_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/profile_activity_item"
+        android:padding="10dp"
+        android:text="Dark mode"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+</LinearLayout>

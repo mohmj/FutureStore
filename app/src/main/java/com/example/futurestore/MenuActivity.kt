@@ -1,14 +1,13 @@
 package com.example.futurestore
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.example.futurestore.Models.UserInformation
 import com.example.futurestore.Services.Categories
 import com.example.futurestore.Services.Database
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -93,6 +92,11 @@ class MenuActivity : AppCompatActivity() {
             }
             menu_activity_chat_button.setOnClickListener(){
                 //Nothing until now
+            }
+            menu_activity_night_mood_button.setOnClickListener(){
+                val mDialog = BottomSheetDialog(this)
+                mDialog.setContentView(R.layout.activity_dark_mode_dialog)
+                mDialog.show()
             }
 
 }
