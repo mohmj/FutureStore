@@ -16,15 +16,18 @@ class ShowProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_product)
 
-//        var productName= intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.name
-//        var productPrice=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.price.toString()
-//        var productDescription=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.description.toString()
-//        var productImageLink=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.imageLink.toString()
+        val productName= intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.name.toString()
+        show_product_activity_name_text_view.text=productName
 
-        show_product_activity_name_text_view.text= intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.name.toString()
-        show_product_activity_price_text_view.text=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.price.toString()
-        Picasso.get().load(intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.imageLink.toString()).into(show_product_activity_image_view)
-        show_product_activity_description_text_view.text=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.description.toString()
+        val productPrice=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.price.toString()
+        show_product_activity_price_text_view.text=productPrice
 
+        val productDescription=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.description.toString()
+        show_product_activity_description_text_view.text=productDescription
+
+        val productImageLink=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.imageLink.toString()
+        if(productImageLink != ""){
+            Picasso.get().load(productImageLink).into(show_product_activity_image_view)
+        }
     }
 }
