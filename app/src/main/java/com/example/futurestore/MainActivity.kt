@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.futurestore.Adapters.TestProudct
 import com.example.futurestore.Models.ProductInformation
+import com.example.futurestore.Services.Categories
 import com.example.futurestore.Services.Database
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         // Desktop
         main_activity_desktop_recycler_view.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
@@ -81,41 +84,42 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+        var category=Categories()
 
         main_activity_menu_image_button.setOnClickListener(){
             startActivity(Intent(this,MenuActivity::class.java))
         }
 
         main_activity_cpu_categories.setOnClickListener(){
-            category("computer/CPU",resources.getString(R.string.CPU))
+            category(category.CPU,resources.getString(R.string.CPU))
 
         }
         main_activity_gpu_categories.setOnClickListener(){
-            category("computer/GPU",resources.getString(R.string.GPU))
+            category(category.GPU,resources.getString(R.string.GPU))
         }
         main_activity_motherboard_categories.setOnClickListener(){
-            category("computer/motherboard",resources.getString(R.string.motherboard))
+            category(category.motherboard,resources.getString(R.string.motherboard))
         }
         main_activity_ram_categories.setOnClickListener(){
-            category("computer/ram",resources.getString(R.string.ram))
+            category(category.RAM,resources.getString(R.string.ram))
         }
         main_activity_hardisks_categories.setOnClickListener(){
-            category("computer/hardisk",resources.getString(R.string.hard_disk))
+            category(category.hard_disk,resources.getString(R.string.hard_disk))
         }
         main_activity_water_cooler_categories.setOnClickListener(){
-            category("computer/waterCooler",resources.getString(R.string.water_cooling))
+            category(category.water_cooler,resources.getString(R.string.water_cooling))
         }
         main_activity_air_cooler_categories.setOnClickListener(){
-            category("computer/airCooler",resources.getString(R.string.air_cooling))
+            category(category.air_cooler,resources.getString(R.string.air_cooling))
         }
         main_activity_case_categories.setOnClickListener(){
-            category("computer/case",resources.getString(R.string.cases))
+            category(category.case,resources.getString(R.string.cases))
         }
         main_activity_headphone_categories.setOnClickListener(){
-            category("computer/headphone",resources.getString(R.string.headphone))
+            category(category.headphone,resources.getString(R.string.headphone))
         }
         main_activity_sound_card_categories.setOnClickListener(){
-            category("computer/soundCard",resources.getString(R.string.sound_card))
+            category(category.sound_card,resources.getString(R.string.sound_card))
         }
 
 
@@ -125,7 +129,7 @@ class MainActivity : AppCompatActivity() {
 
     fun category(category:String,categoryTitle: String){
         var intent=Intent(this,ProductActivity::class.java)
-        intent.putExtra(Database().category,category)
+        intent.putExtra(Database().category,"computer/$category")
         intent.putExtra(Database().categoryTitle,categoryTitle)
         startActivity(intent)
     }

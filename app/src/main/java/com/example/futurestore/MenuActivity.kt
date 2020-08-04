@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.futurestore.Models.UserInformation
+import com.example.futurestore.Services.Categories
 import com.example.futurestore.Services.Database
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ChildEventListener
@@ -53,6 +54,8 @@ class MenuActivity : AppCompatActivity() {
 
         }
 
+        var category=Categories()
+
             menu_activity_cart_button.setOnClickListener(){
                 //Nothing until now
             }
@@ -65,16 +68,16 @@ class MenuActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             menu_activity_laptop_button.setOnClickListener(){
-                category("laptop",resources.getString(R.string.laptop))
+                category(category.laptop,resources.getString(R.string.laptop))
             }
             menu_activity_console_button.setOnClickListener(){
-                category("console",resources.getString(R.string.console))
+                category(category.console,resources.getString(R.string.console))
             }
             menu_activity_program_and_game_button.setOnClickListener(){
-                category("programs_and_games",resources.getString(R.string.programs_and_games))
+                category(category.programs_and_games,resources.getString(R.string.programs_and_games))
             }
             menu_activity_buy_and_sale_accounts_button.setOnClickListener(){
-                category("buy_and_sale_account",resources.getString(R.string.buy_and_sale_account))
+                category(category.buy_and_sale_accounts,resources.getString(R.string.buy_and_sale_account))
             }
             menu_activity_instagram_button.setOnClickListener(){
                 //Nothing until now

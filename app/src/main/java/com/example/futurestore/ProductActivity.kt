@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.futurestore.Adapters.TestProudct
 import com.example.futurestore.Models.ProductInformation
@@ -31,7 +32,7 @@ class ProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
 
-        var category=intent.getStringExtra(Database().category)
+        val category=intent.getStringExtra(Database().category)
         supportActionBar?.title=intent.getStringExtra(Database().categoryTitle.toString())
 
         product_activity_recycler_view.layoutManager=StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
@@ -41,6 +42,7 @@ class ProductActivity : AppCompatActivity() {
 
         var reference=Firebase.database.getReference("products/$category")
 
+
         reference.addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
@@ -49,21 +51,25 @@ class ProductActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 var adapter=GroupAdapter<ViewHolder>()
                 snapshot.children.forEach(){
-                    var pro=it.getValue(ProductInformation::class.java)
+                    val pro=it.getValue(ProductInformation::class.java)
                     if(pro != null){
                         adapter.add(TestProudct(pro))
                     }
+
                 }
+
+
                 product_activity_recycler_view.adapter=adapter
                 adapter.setOnItemClickListener(){item, view ->
-                    var intent= Intent(view.context,ShowProductActivity::class.java)
-                    var producty=item as TestProudct
+                    val intent= Intent(view.context,ShowProductActivity::class.java)
+                    val producty=item as TestProudct
                     intent.putExtra(Database().productInformation,producty.info)
                     startActivity(intent)
                 }
             }
 
         })
+
 
 
 
