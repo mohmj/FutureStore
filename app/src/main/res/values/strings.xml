@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">FutureStore</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -18,27 +19,27 @@
     <string name="cases">Cases</string>
     <string name="sound_card">Sound card</string>
     <string name="hard_disk">Hard disk</string>
-    <string name="air_cooling">Air cooling</string>
-    <string name="water_cooling">Water cooling</string>
-    <string name="ram">Ram</string>
+    <string name="air_cooling">Air cooler</string>
+    <string name="water_cooling">Water cooler</string>
+    <string name="ram">RAM</string>
     <string name="headphone">Headphone</string>
     <string name="computer">Computer</string>
     <string name="laptop">Laptop</string>
     <string name="console">Console</string>
     <string name="programs_and_games">Programs and games</string>
-    <string name="buy_and_sale_account">Buy and sale account</string>
+    <string name="buy_and_sale_account">account buying and selling</string>
     <string name="profile">Profile</string>
     <string name="contact_us">Contact us</string>
     <string name="welcome">Welcome</string>
     <string name="Login">Sign in</string>
-    <string name="the_data_was_updated_successfully">Data is updates successfully</string>
+    <string name="the_data_was_updated_successfully">Data is updated successfully</string>
     <string name="sign_out">SIGN OUT</string>
-    <string name="sign_out_successful">Sign out successful.</string>
-    <string name="send_please_check_your_email">Send. Please check your email.</string>
+    <string name="sign_out_successful">You signed out successfully.</string>
+    <string name="send_please_check_your_email">The link is Sent. Please check your email.</string>
     <string name="fill_your_data">Please fill your data.</string>
-    <string name="sign_in_successful">Sign in successful</string>
+    <string name="sign_in_successful">You sign in successfully. Welcome</string>
     <string name="sign_up_successful">Sign up successful</string>
-    <string name="you_must_accept_the_privacy">You must accept the privacy</string>
+    <string name="you_must_accept_the_privacy">You must accept the privacy and terms of use</string>
     <string name="password_does_not_match">Password does not match</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
@@ -48,16 +49,20 @@
     <string name="price">Price:</string>
     <string name="password">Password</string>
     <string name="forget_my_password">Forget my password</string>
-    <string name="don_t_have_an_account_registration">Don\'t have an account? Registration</string>
+    <string name="don_t_have_an_account_registration">Don\'t have an account? Sign up here! </string>
     <string name="login">login</string>
     <string name="phone_number_9665123456789">Phone number: 9665123456789</string>
     <string name="confirm_password">Confirm password</string>
     <string name="privacy">Privacy</string>
     <string name="already_have_an_account_login">Already have an account? Login</string>
-    <string name="registreation">Registreation</string>
+    <string name="registreation">Registration</string>
     <string name="desktop">Desktop</string>
-    <string name="special_offer">Special offer</string>
-    <!--    Done translate untill here-->
-
+    <string name="special_offer">Special offers</string>
+    <string name="personal_data">Personal data</string>
+    <string name="last_orders">Last orders</string>
+    <string name="return_and_warranty">Return And Warranty</string>
+    <string name="addresses">Addresses</string>
+    <string name="seller_account">Seller account</string>
+    <!--    Done translate until here-->
 
 </resources>

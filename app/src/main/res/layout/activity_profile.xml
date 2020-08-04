@@ -28,7 +28,7 @@
         android:id="@+id/profile_activity_big_button_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="تسجيل الخروج"
+        android:text="@string/sign_out"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="30sp"
@@ -52,28 +52,29 @@
             android:layout_height="wrap_content"
             android:background="@drawable/profile_activity_item">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView42"
-                app:srcCompat="@drawable/icons8_back_80px" />
-
             <TextView
                 android:id="@+id/textView42"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="البيانات الشخصية"
+                android:text="@string/personal_data"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView42"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView42"
+                app:srcCompat="@drawable/icons8_back_2_80px" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,26 +83,26 @@
             android:background="@drawable/profile_activity_item">
 
             <ImageView
-                android:layout_width="30dp"
+                android:id="@+id/imageView6"
+                android:layout_width="40dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/textView43"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView43"
-                app:srcCompat="@drawable/icons8_back_80px" />
+                app:srcCompat="@drawable/icons8_back_2_80px" />
 
             <TextView
                 android:id="@+id/textView43"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="الطلبات السابقة"
+                android:text="@string/last_orders"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -111,26 +112,26 @@
             android:background="@drawable/profile_activity_item">
 
             <ImageView
-                android:layout_width="30dp"
+                android:id="@+id/imageView15"
+                android:layout_width="40dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView44"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView44"
-                app:srcCompat="@drawable/icons8_back_80px" />
+                app:srcCompat="@drawable/icons8_back_2_80px" />
 
             <TextView
                 android:id="@+id/textView44"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="خدمات الإرجاع والضمان"
+                android:text="@string/return_and_warranty"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -140,26 +141,26 @@
             android:background="@drawable/profile_activity_item">
 
             <ImageView
-                android:layout_width="30dp"
+                android:id="@+id/imageView16"
+                android:layout_width="40dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView45"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView45"
-                app:srcCompat="@drawable/icons8_back_80px" />
+                app:srcCompat="@drawable/icons8_back_2_80px" />
 
             <TextView
                 android:id="@+id/textView45"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="العناوين"
+                android:text="@string/addresses"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -169,26 +170,26 @@
             android:background="@drawable/profile_activity_item">
 
             <ImageView
-                android:layout_width="30dp"
+                android:id="@+id/imageView17"
+                android:layout_width="40dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/textView46"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView46"
-                app:srcCompat="@drawable/icons8_back_80px" />
+                app:srcCompat="@drawable/icons8_back_2_80px" />
 
             <TextView
                 android:id="@+id/textView46"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="حساب بائع"
+                android:text="@string/seller_account"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

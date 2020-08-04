@@ -58,6 +58,11 @@
     <string name="registreation">التسجيل</string>
     <string name="desktop">التجميعات الجاهزة</string>
     <string name="special_offer">العروض الخاصة</string>
+    <string name="personal_data">البيانات الشخصية</string>
+    <string name="last_orders">الطلبات السابقة</string>
+    <string name="return_and_warranty">خدمات الإرجاع والضمان</string>
+    <string name="addresses">العناوين</string>
+    <string name="seller_account">حساب البائع</string>
     <!--    Done translate untill here-->
 
 </resources>
