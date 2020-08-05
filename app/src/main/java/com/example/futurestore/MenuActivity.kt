@@ -3,6 +3,7 @@ package com.example.futurestore
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.futurestore.Models.UserInformation
 import com.example.futurestore.Services.Categories
 import com.example.futurestore.Services.Database
@@ -13,6 +14,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_dark_mode_dialog.*
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -93,11 +95,12 @@ class MenuActivity : AppCompatActivity() {
             menu_activity_chat_button.setOnClickListener(){
                 //Nothing until now
             }
-            menu_activity_night_mood_button.setOnClickListener(){
-                val mDialog = BottomSheetDialog(this)
-                mDialog.setContentView(R.layout.activity_dark_mode_dialog)
-                mDialog.show()
-            }
+//            menu_activity_night_mood_button.setOnClickListener(){
+//                val mDialog = BottomSheetDialog(this)
+//                mDialog.setContentView(layoutInflater.inflate(R.layout.activity_dark_mode_dialog,null))
+//                mDialog.show()
+//            }
+
 
 }
 

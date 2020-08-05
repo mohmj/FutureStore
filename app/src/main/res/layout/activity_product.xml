@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Default_background"
     tools:context=".ProductActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -11,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:background="@color/Default_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/default_edit_text"
         android:ems="10"
         android:hint="Search"
@@ -39,8 +41,9 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="4dp"
+        android:background="@color/Default_background"
         app:layout_constraintBottom_toBottomOf="@+id/product_activity_search_edit_text"
         app:layout_constraintEnd_toEndOf="@+id/product_activity_search_edit_text"
         app:layout_constraintTop_toTopOf="@+id/product_activity_search_edit_text"

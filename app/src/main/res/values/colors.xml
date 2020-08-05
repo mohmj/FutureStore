@@ -11,4 +11,5 @@
     <color name="Default1">#736F72</color>
     <color name="Default_white">#F0F0F0</color>
     <color name="Default_red">#F80000</color>
+    <color name="Default_background">#ffffff</color>
 </resources>

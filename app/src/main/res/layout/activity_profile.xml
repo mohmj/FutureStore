@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Default_background"
     tools:context=".ProfileActivity">
 
     <TextView
         android:id="@+id/profile_activity_big_button_background_text_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/Default_red"
         app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/Default_red"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -70,10 +71,12 @@
                 android:id="@+id/imageView5"
                 android:layout_width="40dp"
                 android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:rotation="180"
                 app:layout_constraintBottom_toBottomOf="@+id/textView42"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView42"
-                app:srcCompat="@drawable/icons8_back_2_80px" />
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -86,10 +89,12 @@
                 android:id="@+id/imageView6"
                 android:layout_width="40dp"
                 android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:rotation="180"
                 app:layout_constraintBottom_toBottomOf="@+id/textView43"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView43"
-                app:srcCompat="@drawable/icons8_back_2_80px" />
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
             <TextView
                 android:id="@+id/textView43"
@@ -115,10 +120,12 @@
                 android:id="@+id/imageView15"
                 android:layout_width="40dp"
                 android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:rotation="180"
                 app:layout_constraintBottom_toBottomOf="@+id/textView44"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView44"
-                app:srcCompat="@drawable/icons8_back_2_80px" />
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
             <TextView
                 android:id="@+id/textView44"
@@ -144,10 +151,12 @@
                 android:id="@+id/imageView16"
                 android:layout_width="40dp"
                 android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:rotation="180"
                 app:layout_constraintBottom_toBottomOf="@+id/textView45"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView45"
-                app:srcCompat="@drawable/icons8_back_2_80px" />
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
             <TextView
                 android:id="@+id/textView45"
@@ -173,10 +182,12 @@
                 android:id="@+id/imageView17"
                 android:layout_width="40dp"
                 android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:rotation="180"
                 app:layout_constraintBottom_toBottomOf="@+id/textView46"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView46"
-                app:srcCompat="@drawable/icons8_back_2_80px" />
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
 
             <TextView
                 android:id="@+id/textView46"
