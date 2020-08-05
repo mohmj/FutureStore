@@ -95,7 +95,7 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this,ProfileActivity::class.java))
             }
             menu_activity_chat_button.setOnClickListener(){
-                //Nothing until now
+                startActivity(Intent(this,ContactActivity::class.java))
             }
             menu_activity_web_button.setOnClickListener(){
                 val url = "http://www.softwareclinics.com/"

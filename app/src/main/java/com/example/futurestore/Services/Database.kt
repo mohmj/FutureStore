@@ -13,4 +13,5 @@ class Database (){
     var categoryTitle="category_title"
     var productInformation="product_information"
     var user_name:String=""
+    var contactMessagesPath="contact/$uid/messages"
 }

@@ -63,6 +63,7 @@
     <string name="return_and_warranty">خدمات الإرجاع والضمان</string>
     <string name="addresses">العناوين</string>
     <string name="seller_account">حساب البائع</string>
+    <string name="type_your_message_here">Type your message here</string>
     <!--    Done translate untill here-->
 
 </resources>
