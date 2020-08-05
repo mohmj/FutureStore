@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="@string/Login"
-        android:textColor="@android:color/white"
+        android:textColor="@color/Default_font_color_light"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline1362"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +104,7 @@
         android:layout_marginTop="64dp"
         android:background="@drawable/default_button"
         android:text="@string/login"
-        android:textColor="@android:color/white"
+        android:textColor="@color/Default_font_color_light"
         app:layout_constraintEnd_toEndOf="@+id/signin_activity_password_edit_text"
         app:layout_constraintStart_toStartOf="@+id/signin_activity_password_edit_text"
         app:layout_constraintTop_toBottomOf="@+id/signin_activity_password_edit_text" />

@@ -16,7 +16,7 @@
         android:background="@drawable/profile_activity_item"
         android:padding="10dp"
         android:text="Light mode"
-        android:textColor="@android:color/black"
+        android:textColor="@color/Default_font_color_dark"
         android:textSize="14sp" />
 
     <TextView
@@ -28,7 +28,7 @@
         android:background="@drawable/profile_activity_item"
         android:padding="10dp"
         android:text="Dark mode"
-        android:textColor="@android:color/black"
+        android:textColor="@color/Default_font_color_dark"
         android:textSize="14sp" />
 
 </LinearLayout>

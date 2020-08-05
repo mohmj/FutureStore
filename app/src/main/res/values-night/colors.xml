@@ -12,4 +12,6 @@
     <color name="Default_white">#7E6D6D</color>
     <color name="Default_red">#391515</color>
     <color name="Default_background">#ffffff</color>
+    <color name="Default_font_color_dark">#000000</color>
+    <color name="Default_font_color_light">#ffffff</color>
 </resources>
