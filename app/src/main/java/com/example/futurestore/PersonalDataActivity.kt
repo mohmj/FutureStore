@@ -1,5 +1,6 @@
 package com.example.futurestore
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -56,20 +57,35 @@ class PersonalDataActivity : AppCompatActivity() {
             })
 
             personal_data_activity_button.setOnClickListener(){
+                val progressDialog=ProgressDialog(this)
+                progressDialog.setTitle("Please wait")
+                progressDialog.setMessage("Wait until data update")
+                progressDialog.show()
                 name=personal_data_activity_name_edit_text.text.toString()
                 email=personal_data_activity_email_edit_text.text.toString()
                 phoneNumber=personal_data_activity_phone_number_edit_text.text.toString()
 
-                var reference=Firebase.database.getReference("users/$uid")
-                auth.currentUser?.updateEmail(email)?.addOnSuccessListener {
-                    reference.setValue(UserInformation(uid,name,email,phoneNumber)).addOnSuccessListener {
-                        Toast.makeText(this,resources.getString(R.string.the_data_was_updated_successfully),Toast.LENGTH_SHORT).show()
-                        var intent= Intent(this,ProfileActivity::class.java)
-                        intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        startActivity(intent)
+                if(name.isNotEmpty() && email.isNotEmpty() && phoneNumber.isNotEmpty()) {
+                    var reference = Firebase.database.getReference("users/$uid")
+                    auth.currentUser?.updateEmail(email)?.addOnSuccessListener {
+                        reference.setValue(UserInformation(uid, name, email, phoneNumber))
+                            .addOnSuccessListener {
+                                progressDialog.hide()
+                                Toast.makeText(
+                                    this,
+                                    resources.getString(R.string.the_data_was_updated_successfully),
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                var intent = Intent(this, ProfileActivity::class.java)
+                                intent.flags =
+                                    Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                startActivity(intent)
+                            }
+                    }?.addOnFailureListener {
+                        Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
                     }
-                }?.addOnFailureListener {
-                  Toast.makeText(this,"${it.message}",Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this,resources.getText(R.string.fill_your_data),Toast.LENGTH_SHORT).show()
                 }
 
             }

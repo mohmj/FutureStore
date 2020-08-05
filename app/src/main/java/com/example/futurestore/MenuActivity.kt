@@ -1,6 +1,8 @@
 package com.example.futurestore
 
+import android.content.ComponentName
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -95,6 +97,26 @@ class MenuActivity : AppCompatActivity() {
             menu_activity_chat_button.setOnClickListener(){
                 //Nothing until now
             }
+            menu_activity_web_button.setOnClickListener(){
+                val url = "http://www.softwareclinics.com/"
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(url)
+                startActivity(intent)
+            }
+            menu_activity_twitter_button.setOnClickListener(){
+                val url = "https://www.twitter.com/abdullahrayes_"
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(url)
+                startActivity(intent)
+            }
+            menu_activity_instagram_button.setOnClickListener(){
+                val url = "https://www.instagram.com/ironmj_/"
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(url)
+                startActivity(intent)
+            }
+
+
 //            menu_activity_night_mood_button.setOnClickListener(){
 //                val mDialog = BottomSheetDialog(this)
 //                mDialog.setContentView(layoutInflater.inflate(R.layout.activity_dark_mode_dialog,null))
