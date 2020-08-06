@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.futurestore.Adapters.MessageFromUserAdapter
 import com.example.futurestore.Adapters.MessageToUserAdapter
 import com.example.futurestore.Models.ContactMessage
+import com.example.futurestore.Models.UserInformation
 import com.example.futurestore.Services.Database
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ChildEventListener
@@ -19,6 +20,9 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_contact.*
 
 class ContactActivity : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact)
@@ -27,7 +31,33 @@ class ContactActivity : AppCompatActivity() {
         var uid=Firebase.auth.uid
         var reference= Firebase.database.getReference("chats/$uid/messages")
         var userChatReference=Firebase.database.getReference("users/$uid/chat/messages")
+        var userDataChatReference=Firebase.database.getReference("chats/$uid")
         contact_activity_message_recycler_view.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        var userDataReference=Firebase.database.getReference("users")
+
+        var userEmail="a"
+        var userName=""
+        var userPhoneNumber=""
+
+        userDataReference.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach {
+                    var user=it.getValue(UserInformation::class.java)
+                    if(user != null){
+                        if(user.uid==uid){
+                            userEmail=user.email
+                            userName=user.name
+                            userPhoneNumber=user.phoneNumber
+                        }
+                    }
+                }
+            }
+
+        })
 
         userChatReference.addChildEventListener(object:ChildEventListener{
             override fun onCancelled(error: DatabaseError) {
@@ -70,6 +100,7 @@ class ContactActivity : AppCompatActivity() {
 
 
         contact_activity_send_message_button.setOnClickListener(){
+            userDataChatReference.setValue(UserInformation(uid.toString(),userName,userEmail,userPhoneNumber))
             var message=contact_activity_message_edit_text.text.toString()
             if(message.isNotEmpty()){
                 reference.push().setValue(ContactMessage(uid.toString(),message))
