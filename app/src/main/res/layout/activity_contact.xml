@@ -39,6 +39,7 @@
             android:padding="15dp"
             android:paddingStart="15dp"
             android:paddingEnd="35dp"
+            android:textAlignment="textStart"
             android:textColor="@color/Default_font_color_dark"
             android:textColorHighlight="@color/Default3"
             android:textColorHint="@color/Default3"

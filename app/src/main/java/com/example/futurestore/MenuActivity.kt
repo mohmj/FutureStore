@@ -20,9 +20,15 @@ import kotlinx.android.synthetic.main.activity_dark_mode_dialog.*
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
+
 
         val uid=Firebase.auth.uid
         menu_activity_name_text_view.text=Database().user_name
@@ -95,7 +101,35 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this,ProfileActivity::class.java))
             }
             menu_activity_chat_button.setOnClickListener(){
-                startActivity(Intent(this,ContactActivity::class.java))
+                var uid=Firebase.auth.uid
+                if(uid==null){
+                    startActivity(Intent(this, SigninActivity::class.java))
+                }else{
+                    var userReference=Firebase.database.getReference("users")
+                    userReference.addListenerForSingleValueEvent(object:ValueEventListener{
+                        override fun onCancelled(error: DatabaseError) {
+                            TODO("Not yet implemented")
+                        }
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            var userName=""
+                            var userEmail=""
+                            var userPhoneNumber=""
+                            snapshot.children.forEach {
+                                var user=it.getValue(UserInformation::class.java)
+                                if(user != null){
+                                    if(user.uid==uid.toString()){
+                                        userName=user.name
+                                        userEmail=user.email
+                                        userPhoneNumber=user.phoneNumber
+                                    }
+                                }
+                            }
+                            Firebase.database.getReference("chats/chat_users/$uid").setValue(UserInformation(uid.toString(),userName,userEmail,userPhoneNumber))
+                        }
+
+                    })
+                    startActivity(Intent(this,ContactActivity::class.java))
+                }
             }
             menu_activity_web_button.setOnClickListener(){
                 val url = "http://www.softwareclinics.com/"
