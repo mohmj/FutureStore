@@ -66,10 +66,10 @@ class MenuActivity : AppCompatActivity() {
         var category=Categories()
 
             menu_activity_cart_button.setOnClickListener(){
-                //Nothing until now
+                startActivity(Intent(this,CartActivity::class.java))
             }
             menu_activity_wish_list_button.setOnClickListener(){
-                //Nothing until now
+                startActivity(Intent(this,WishlistActivity::class.java))
             }
             menu_activity_computer_button.setOnClickListener(){
                 var intent=Intent(this,MainActivity::class.java)
@@ -88,16 +88,26 @@ class MenuActivity : AppCompatActivity() {
             menu_activity_buy_and_sale_accounts_button.setOnClickListener(){
                 category(category.buy_and_sale_accounts,resources.getString(R.string.buy_and_sale_account))
             }
-            menu_activity_instagram_button.setOnClickListener(){
-                //Nothing until now
-            }
-            menu_activity_twitter_button.setOnClickListener(){
-                //Nothing until now
-            }
-            menu_activity_web_button.setOnClickListener(){
-                //Nothing until now
-            }
-            menu_activity_profile_button.setOnClickListener(){
+        menu_activity_web_button.setOnClickListener(){
+            val url = "http://www.softwareclinics.com/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+        menu_activity_twitter_button.setOnClickListener(){
+            val url = "https://www.twitter.com/abdullahrayes_"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+        menu_activity_instagram_button.setOnClickListener(){
+            val url = "https://www.instagram.com/ironmj_/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        menu_activity_profile_button.setOnClickListener(){
             startActivity(Intent(this,ProfileActivity::class.java))
             }
             menu_activity_chat_button.setOnClickListener(){
@@ -130,24 +140,6 @@ class MenuActivity : AppCompatActivity() {
                     })
                     startActivity(Intent(this,ContactActivity::class.java))
                 }
-            }
-            menu_activity_web_button.setOnClickListener(){
-                val url = "http://www.softwareclinics.com/"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(url)
-                startActivity(intent)
-            }
-            menu_activity_twitter_button.setOnClickListener(){
-                val url = "https://www.twitter.com/abdullahrayes_"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(url)
-                startActivity(intent)
-            }
-            menu_activity_instagram_button.setOnClickListener(){
-                val url = "https://www.instagram.com/ironmj_/"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(url)
-                startActivity(intent)
             }
 
 

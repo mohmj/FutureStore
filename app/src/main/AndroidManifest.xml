@@ -9,13 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".WishlistShowProductActivity"></activity>
+        <activity android:name=".WishlistActivity" />
+        <activity android:name=".CartShowProductActivity" />
+        <activity android:name=".cart_item" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".TestActivity" />
         <activity android:name=".ContactActivity" />
         <activity android:name=".DarkModeDialogActivity" />
         <activity android:name=".ShowProductActivity" />
@@ -37,7 +36,11 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

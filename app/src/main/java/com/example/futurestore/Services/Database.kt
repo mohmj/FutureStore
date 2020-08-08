@@ -14,4 +14,6 @@ class Database (){
     var productInformation="product_information"
     var user_name:String=""
     var contactMessagesPath="contact/$uid/messages"
+    var cartIntent="cart_intent"
+    var wishListIntent="wish_list_intent"
 }

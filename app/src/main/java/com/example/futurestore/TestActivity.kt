@@ -1,19 +1,19 @@
 package com.example.futurestore
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.futurestore.Models.UserInformation
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+import androidx.appcompat.app.AppCompatActivity
+import com.rey.material.app.Dialog
+import kotlinx.android.synthetic.main.activity_test.*
 
 class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
-        var uid="123"
-        var name="one two three"
-        var email="123@onetwothree.ott"
-        var phoneNumber="123123123"
-        Firebase.database.getReference("TEST/name").removeValue()
+
+//        button.setOnClickListener(){
+//            val mDialog = Dialog(this, R.layout.activity_cart_item)
+//            mDialog.applyStyle(R.layout.activity_cart_item).title("Test").positiveAction("ok").negativeAction("Cancel").contentView(R.layout.activity_signin).show()
+//        }
+
     }
 }
