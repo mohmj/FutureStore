@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WishlistShowProductActivity"></activity>
+        <activity android:name=".UpdateAddressActivity"></activity>
+        <activity android:name=".UpdadeLocationActivity" />
+        <activity android:name=".AddressesActivity" />
+        <activity android:name=".AddressNewActivity" />
+        <activity android:name=".WishlistShowProductActivity" />
         <activity android:name=".WishlistActivity" />
         <activity android:name=".CartShowProductActivity" />
         <activity android:name=".cart_item" />

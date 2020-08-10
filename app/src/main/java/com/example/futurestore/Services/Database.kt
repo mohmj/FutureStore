@@ -16,4 +16,5 @@ class Database (){
     var contactMessagesPath="contact/$uid/messages"
     var cartIntent="cart_intent"
     var wishListIntent="wish_list_intent"
+    var updateLocation="update_location"
 }

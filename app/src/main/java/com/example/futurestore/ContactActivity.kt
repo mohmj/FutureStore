@@ -49,15 +49,17 @@ class ContactActivity : AppCompatActivity() {
             }
 
             override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-                var message=snapshot.getValue(ContactMessage::class.java)
-                if(message != null){
-                    if(message.uid==uid){
-                        adapter.add(MessageToUserAdapter(message))
-                    }else{
-                        adapter.add(MessageFromUserAdapter(message))
+
+                    var message=snapshot.getValue(ContactMessage::class.java)
+                    if(message != null){
+                        if(message.uid==uid){
+                            adapter.add(MessageToUserAdapter(message))
+                        }else{
+                            adapter.add(MessageFromUserAdapter(message))
+                        }
                     }
-                }
-                contact_activity_message_recycler_view.adapter=adapter
+                    contact_activity_message_recycler_view.adapter=adapter
+
             }
 
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {

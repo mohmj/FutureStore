@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateAddressActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/update_address_activity_city_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/default_edit_text"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Spinner>
+
+        <RadioGroup
+            android:id="@+id/update_address_activity_type_radio_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/update_address_activity_city_spinner">
+
+            <RadioButton
+                android:id="@+id/update_address_activity_home_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="Home" />
+
+            <RadioButton
+                android:id="@+id/update_address_activity_work_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="Work" />
+
+            <RadioButton
+                android:id="@+id/update_address_activity_relax_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="Relax" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/update_address_activity_distrect_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/default_edit_text"
+            android:hint="Distrect"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/Default5"
+            android:textColorHighlight="@color/Default3"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/update_address_activity_type_radio_group" />
+
+        <EditText
+            android:id="@+id/update_address_activity_street_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/default_edit_text"
+            android:ems="10"
+            android:hint="Street"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/Default5"
+            android:textColorHighlight="@color/Default3"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/update_address_activity_distrect_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/update_address_activity_distrect_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/update_address_activity_distrect_edit_text" />
+
+        <EditText
+            android:id="@+id/update_address_activity_near_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/default_edit_text"
+            android:ems="10"
+            android:hint="معلم قريب"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/Default5"
+            android:textColorHighlight="@color/Default3"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/update_address_activity_street_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/update_address_activity_street_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/update_address_activity_street_edit_text" />
+
+        <Spinner
+            android:id="@+id/update_address_activity_time_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/default_edit_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/update_address_activity_near_edit_text">
+
+        </Spinner>
+
+        <EditText
+            android:id="@+id/update_address_activity_name_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/default_edit_text"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/Default5"
+            android:textColorHighlight="@color/Default3"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/update_address_activity_near_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/update_address_activity_near_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/update_address_activity_time_spinner" />
+
+        <EditText
+            android:id="@+id/update_address_activity_phone_number_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/default_edit_text"
+            android:ems="10"
+            android:hint="Phone number"
+            android:inputType="number"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/Default5"
+            android:textColorHighlight="@color/Default3"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/update_address_activity_name_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/update_address_activity_name_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/update_address_activity_name_edit_text" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/update_address_activity_phone_number_edit_text">
+
+            <Button
+                android:id="@+id/update_address_activity_update_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/default_button"
+                android:text="update locatin"
+                android:textColor="@color/Default_font_color_light"
+                app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <Button
+                android:id="@+id/update_address_activity_delete_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/default_red_button"
+                android:text="dalete"
+                android:textColor="@color/Default_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline5"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>

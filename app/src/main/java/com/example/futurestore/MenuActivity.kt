@@ -147,7 +147,7 @@ class MenuActivity : AppCompatActivity() {
 //                val mDialog = BottomSheetDialog(this)
 //                mDialog.setContentView(layoutInflater.inflate(R.layout.activity_dark_mode_dialog,null))
 //                mDialog.show()
-//            }
+//          }
 
 
 }

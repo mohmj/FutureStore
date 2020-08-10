@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/addresses_menu_add_location" android:icon="@drawable/icons8_add_240px" app:showAsAction="ifRoom" android:title="Add new location"/>
+
+</menu>

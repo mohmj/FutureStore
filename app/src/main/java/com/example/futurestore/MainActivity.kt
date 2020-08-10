@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.futurestore.Adapters.TestProudct
 import com.example.futurestore.Models.ProductInformation
 import com.example.futurestore.Services.Categories
 import com.example.futurestore.Services.Database

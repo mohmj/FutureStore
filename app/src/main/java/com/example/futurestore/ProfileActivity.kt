@@ -1,10 +1,8 @@
 package com.example.futurestore
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ViewManager
 import android.widget.Toast
 import com.example.futurestore.Services.Database
 import com.google.firebase.auth.ktx.auth
@@ -22,6 +20,21 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent(this,PersonalDataActivity::class.java))
         }
 
+        profile_activity_last_oreders_container.setOnClickListener(){
+            //Nothing until now
+        }
+
+        profile_activity_return_and_warranty_container.setOnClickListener(){
+            //Nothing until now
+        }
+
+        profile_activity_addresses_container.setOnClickListener(){
+            startActivity(Intent(this,AddressesActivity::class.java))
+        }
+
+        profile_activity_seller_account_container.setOnClickListener(){
+            //Nothing until now
+        }
 
 
         if(uid != null){

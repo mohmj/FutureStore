@@ -81,6 +81,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profile_activity_last_oreders_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/profile_activity_item">
@@ -112,6 +113,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profile_activity_return_and_warranty_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/profile_activity_item">
@@ -143,6 +145,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profile_activity_addresses_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/profile_activity_item">
@@ -174,6 +177,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profile_activity_seller_account_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/profile_activity_item">
