@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_cart.*
 
 class CartActivity : AppCompatActivity() {
 
+     var SuperTotal:Double=6.0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +38,12 @@ class CartActivity : AppCompatActivity() {
         getCart()
 
 
+        cart_activity_button.setOnClickListener(){
+            var intent=Intent(this,CartChooseAddressActivity::class.java)
+            Log.d("koko",SuperTotal.toString())
+            intent.putExtra(Database().cartTotal,SuperTotal.toString())
+            startActivity(intent)
+        }
 
 
 
@@ -66,6 +73,7 @@ class CartActivity : AppCompatActivity() {
                         VAT=SUBTOTAL*0.15
                         Log.d("one",SUBTOTAL.toString())
                         adapter.add(CartAdapter(item))
+                        SuperTotal=TOTAL
                     }
                 }
                 cart_activity_sub_total_text_view.text="Subtotal: ${SUBTOTAL.toString()}"

@@ -7,7 +7,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.futurestore.Models.Location
+import com.example.futurestore.Models.UserInformation
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_address_new.*
@@ -35,6 +39,27 @@ class AddressNewActivity : AppCompatActivity() {
         var phoneNumber = "";
         var lat = 0.0;
         var long = 0.0
+
+        Firebase.database.getReference("users").addListenerForSingleValueEvent(object:ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach {
+                    var userInfo=it.getValue(UserInformation::class.java)
+                    if(userInfo != null){
+                        if(userInfo.uid==uid.toString()){
+                            name=userInfo.name
+                            new_address_activity_name_edit_text.setText(name)
+                            phoneNumber=userInfo.phoneNumber
+                            new_address_activity_phone_number_edit_text.setText(phoneNumber)
+                        }
+                    }
+                }
+            }
+
+        })
 
         //------------------------------------------------------------------------------------------------------------------------
         //Spinner for city .

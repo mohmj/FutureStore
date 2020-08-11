@@ -17,4 +17,7 @@ class Database (){
     var cartIntent="cart_intent"
     var wishListIntent="wish_list_intent"
     var updateLocation="update_location"
+    val cartTotal="cart_total"
+    var cartLocation="cart_location"
+    var total:Double=0.0
 }

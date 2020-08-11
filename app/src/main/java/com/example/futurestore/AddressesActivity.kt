@@ -36,15 +36,15 @@ class AddressesActivity : AppCompatActivity() {
 
     }
 
-//    override fun onResume() {
-//        getLocations()
-//        super.onResume()
-//    }
-
-    override fun onRestart() {
+    override fun onResume() {
         getLocations()
-        super.onRestart()
+        super.onResume()
     }
+
+//    override fun onRestart() {
+//        getLocations()
+//        super.onRestart()
+//    }
 
     fun getLocations(){
         var adapter=GroupAdapter<ViewHolder>()

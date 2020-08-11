@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateAddressActivity"></activity>
+        <activity android:name=".CartSummaryActivity"></activity>
+        <activity android:name=".CartChooseAddressActivity" />
+        <activity android:name=".UpdateAddressActivity" />
         <activity android:name=".UpdadeLocationActivity" />
         <activity android:name=".AddressesActivity" />
         <activity android:name=".AddressNewActivity" />

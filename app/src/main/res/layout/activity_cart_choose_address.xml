@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".AddressesActivity">
+    android:layout_height="match_parent"
+    tools:context=".CartChooseAddressActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/addresses_acitivity_recycler_view"
+        android:id="@+id/cart_choose_address_activity"
         android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_height="601dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
