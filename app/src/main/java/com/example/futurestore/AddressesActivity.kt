@@ -3,12 +3,11 @@ package com.example.futurestore
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.futurestore.Adapters.ShowLocationAdapter
-import com.example.futurestore.Models.Location
+import com.example.futurestore.Models.AddressInformation
 import com.example.futurestore.Services.Database
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -57,7 +56,7 @@ class AddressesActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 snapshot.children.forEach {
-                    var location=it.getValue(Location::class.java)
+                    var location=it.getValue(AddressInformation::class.java)
                     if(location != null){
                         adapter.add(ShowLocationAdapter(location))
                     }

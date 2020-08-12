@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CartSummaryActivity"></activity>
+        <activity android:name=".LastOrderShowActivity"></activity>
+        <activity android:name=".LastOredersActivity" />
+        <activity android:name=".CartPaymentActivity" />
+        <activity android:name=".CartSummaryActivity" />
         <activity android:name=".CartChooseAddressActivity" />
-        <activity android:name=".UpdateAddressActivity" />
-        <activity android:name=".UpdadeLocationActivity" />
+        <activity android:name=".UpdateAddressActivity" /> <!-- <activity android:name=".UpdadeLocationActivity" /> -->
         <activity android:name=".AddressesActivity" />
         <activity android:name=".AddressNewActivity" />
         <activity android:name=".WishlistShowProductActivity" />
@@ -23,7 +25,7 @@
         <activity android:name=".TestActivity" />
         <activity android:name=".ContactActivity" />
         <activity android:name=".DarkModeDialogActivity" />
-        <activity android:name=".ShowProductActivity" />
+        <activity android:name=".ProductShowActivity" />
         <activity android:name=".PersonalDataActivity" />
         <activity android:name=".ProductActivity" />
         <activity android:name=".ProfileActivity" />

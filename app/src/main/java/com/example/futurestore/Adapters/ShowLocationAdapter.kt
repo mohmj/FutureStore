@@ -1,12 +1,12 @@
 package com.example.futurestore.Adapters
 
-import com.example.futurestore.Models.Location
+import com.example.futurestore.Models.AddressInformation
 import com.example.futurestore.R
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.location_item.view.*
 
-class ShowLocationAdapter(var location:Location): Item<ViewHolder>() {
+class ShowLocationAdapter(var location:AddressInformation): Item<ViewHolder>() {
     override fun getLayout(): Int {
         return R.layout.location_item
     }

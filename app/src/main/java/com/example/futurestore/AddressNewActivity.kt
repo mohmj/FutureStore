@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.futurestore.Models.Location
+import com.example.futurestore.Models.AddressInformation
 import com.example.futurestore.Models.UserInformation
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -116,7 +116,7 @@ class AddressNewActivity : AppCompatActivity() {
 
             if (district.isNotEmpty() && street.isNotEmpty() && near.isNotEmpty() && name.isNotEmpty() && phoneNumber.isNotEmpty()) {
                 Firebase.database.getReference("users/$uid/addresses/$locationType").setValue(
-                    Location(
+                    AddressInformation(
                         lat,
                         long,
                         city,

@@ -21,12 +21,12 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         profile_activity_last_oreders_container.setOnClickListener(){
-            //Nothing until now
+            startActivity(Intent(this,LastOredersActivity::class.java))
         }
 
-        profile_activity_return_and_warranty_container.setOnClickListener(){
-            //Nothing until now
-        }
+//        profile_activity_return_and_warranty_container.setOnClickListener(){
+//            //Nothing until now
+//        }
 
         profile_activity_addresses_container.setOnClickListener(){
             startActivity(Intent(this,AddressesActivity::class.java))
@@ -47,7 +47,6 @@ class ProfileActivity : AppCompatActivity() {
                 signoutProfile()
             }
         }else{
-
             profile_activity_big_button_background_text_view.setBackgroundResource(R.drawable.profile_signin_button)
             profile_activity_big_button_text_view.text=resources.getString(R.string.Login)
             profile_activity_big_button_background_text_view.setOnClickListener(){

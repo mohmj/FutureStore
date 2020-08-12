@@ -2,20 +2,15 @@ package com.example.futurestore
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.futurestore.Models.Location
+import com.example.futurestore.Models.AddressInformation
 import com.example.futurestore.Services.Database
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_address_new.*
 import kotlinx.android.synthetic.main.activity_update_address.*
 
 class UpdateAddressActivity : AppCompatActivity() {
@@ -29,16 +24,16 @@ class UpdateAddressActivity : AppCompatActivity() {
         setContentView(R.layout.activity_update_address)
 
         var uid = Firebase.auth.uid
-        var locationType = intent.getParcelableExtra<Location>(Database().updateLocation)?.locationType
-        var city =intent.getParcelableExtra<Location>(Database().updateLocation)?.city
-        var time = intent.getParcelableExtra<Location>(Database().updateLocation)?.time
-        var district = intent.getParcelableExtra<Location>(Database().updateLocation)?.district
-        var street = intent.getParcelableExtra<Location>(Database().updateLocation)?.street
-        var near = intent.getParcelableExtra<Location>(Database().updateLocation)?.near
-        var name = intent.getParcelableExtra<Location>(Database().updateLocation)?.name
-        var phoneNumber = intent.getParcelableExtra<Location>(Database().updateLocation)?.phoneNumber
-        var lat = intent.getParcelableExtra<Location>(Database().updateLocation)?.lat
-        var long = intent.getParcelableExtra<Location>(Database().updateLocation)?.long
+        var locationType = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.locationType
+        var city =intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.city
+        var time = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.time
+        var district = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.district
+        var street = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.street
+        var near = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.near
+        var name = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.name
+        var phoneNumber = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.phoneNumber
+        var lat = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.lat
+        var long = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.long
 
         update_address_activity_distrect_edit_text.setText(district)
         update_address_activity_street_edit_text.setText(street)
@@ -101,7 +96,7 @@ class UpdateAddressActivity : AppCompatActivity() {
             phoneNumber = update_address_activity_phone_number_edit_text.text.toString()
 
                 Firebase.database.getReference("users/$uid/addresses/$locationType").setValue(
-                    Location(
+                    AddressInformation(
                         lat.toString().toDouble(),
                         long.toString().toDouble(),
                         city.toString(),

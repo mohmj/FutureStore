@@ -6,4 +6,146 @@
     android:layout_height="match_parent"
     tools:context=".CartSummaryActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Default3"
+        app:layout_constraintBottom_toTopOf="@+id/textView47"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/cart_summary_activity_total_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            android:textColor="@color/Default_font_color_dark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="TOTAL" />
+
+        <TextView
+            android:id="@+id/cart_summary_activity_VAT_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="VAT: "
+            android:textColor="@color/Default_font_color_dark"
+            app:layout_constraintBottom_toTopOf="@+id/cart_summary_activity_total_text_view"
+            app:layout_constraintStart_toStartOf="@+id/cart_summary_activity_total_text_view" />
+
+        <TextView
+            android:id="@+id/cart_summary_activity_sub_total_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="SUBTOTAL: "
+            android:textColor="@color/Default_font_color_dark"
+            app:layout_constraintBottom_toTopOf="@+id/cart_summary_activity_VAT_text_view"
+            app:layout_constraintStart_toStartOf="@+id/cart_summary_activity_VAT_text_view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="SUBTOTAL: " />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/cart_summary_activity_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/Default_font_color_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cart_summary_activity_phone_number_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        android:textColor="@color/Default_font_color_dark"
+        app:layout_constraintStart_toEndOf="@+id/cart_summary_activity_name_text_view"
+        app:layout_constraintTop_toTopOf="@+id/cart_summary_activity_name_text_view" />
+
+    <TextView
+        android:id="@+id/cart_summary_activity_location_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        android:textColor="@color/Default_font_color_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/cart_summary_activity_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/cart_summary_activity_name_text_view" />
+
+    <TextView
+        android:id="@+id/cart_summary_activity_time_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="TextView"
+        android:textColor="@color/Default_font_color_dark"
+        app:layout_constraintStart_toStartOf="@+id/cart_summary_activity_location_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/cart_summary_activity_location_text_view" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/Default3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cart_summery_activity_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/profile_signin_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            android:textColor="@color/Default_font_color_light"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_summary_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cart_summary_activity_time_text_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

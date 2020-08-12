@@ -4,6 +4,7 @@ import android.content.ComponentName
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.futurestore.Models.UserInformation
@@ -18,6 +19,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_dark_mode_dialog.*
 import kotlinx.android.synthetic.main.activity_menu.*
+import java.util.*
 
 class MenuActivity : AppCompatActivity() {
 

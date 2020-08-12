@@ -20,4 +20,11 @@ class Database (){
     val cartTotal="cart_total"
     var cartLocation="cart_location"
     var total:Double=0.0
+    var status="status"
+    var status_received="Received_order"
+    var status_preparing="Preparing_Order"
+    var status_out_for_delivery="Out_for_Delivery"
+    var status_deliverd="Delivered"
+    var last_order="last_order"
+    var order_number="order_number"
 }

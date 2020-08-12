@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_show_product.*
 import kotlinx.android.synthetic.main.product_item.*
 import kotlinx.android.synthetic.main.product_item.view.*
 
-class ShowProductActivity : AppCompatActivity() {
+class ProductShowActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_product)

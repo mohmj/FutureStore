@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 main_activity_desktop_recycler_view.adapter=desktopAdapter
                 desktopAdapter.setOnItemClickListener(){item, view ->
-                    var intent= Intent(view.context,ShowProductActivity::class.java)
+                    var intent= Intent(view.context,ProductShowActivity::class.java)
                     var producty=item as DesktopTest
                     intent.putExtra(Database().productInformation,producty.product)
                     startActivity(intent)
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 main_activity_special_offers_recycler_view.adapter=specialOffersAdapter
                 specialOffersAdapter.setOnItemClickListener(){item, view ->
-                    var intent= Intent(view.context,ShowProductActivity::class.java)
+                    var intent= Intent(view.context,ProductShowActivity::class.java)
                     var producty=item as DesktopTest
                     intent.putExtra(Database().productInformation,producty.product)
                     startActivity(intent)

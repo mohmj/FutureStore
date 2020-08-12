@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.futurestore.Adapters.TestProudctAdapter
+import com.example.futurestore.Adapters.ProudctAdapter
 import com.example.futurestore.Models.ProductInformation
 import com.example.futurestore.Services.Database
 import com.google.firebase.database.DataSnapshot
@@ -45,7 +45,7 @@ class ProductActivity : AppCompatActivity() {
                 snapshot.children.forEach(){
                     val pro=it.getValue(ProductInformation::class.java)
                     if(pro != null){
-                        adapter.add(TestProudctAdapter(pro))
+                        adapter.add(ProudctAdapter(pro))
                     }
 
                 }
@@ -53,8 +53,8 @@ class ProductActivity : AppCompatActivity() {
 
                 product_activity_recycler_view.adapter=adapter
                 adapter.setOnItemClickListener(){item, view ->
-                    val intent= Intent(view.context,ShowProductActivity::class.java)
-                    val producty=item as TestProudctAdapter
+                    val intent= Intent(view.context,ProductShowActivity::class.java)
+                    val producty=item as ProudctAdapter
                     intent.putExtra(Database().productInformation,producty.info)
                     startActivity(intent)
                 }

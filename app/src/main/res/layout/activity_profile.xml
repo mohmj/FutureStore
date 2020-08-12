@@ -51,6 +51,7 @@
             android:id="@+id/profile_activity_personal_data_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/profile_activity_item">
 
             <TextView
@@ -84,6 +85,7 @@
             android:id="@+id/profile_activity_last_oreders_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/profile_activity_item">
 
             <ImageView
@@ -113,41 +115,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/profile_activity_return_and_warranty_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/profile_activity_item">
-
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="40dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="8dp"
-                android:rotation="180"
-                app:layout_constraintBottom_toBottomOf="@+id/textView44"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView44"
-                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
-
-            <TextView
-                android:id="@+id/textView44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="@string/return_and_warranty"
-                android:textColor="@color/Default_font_color_dark"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/profile_activity_addresses_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/profile_activity_item">
 
             <ImageView
@@ -180,6 +151,7 @@
             android:id="@+id/profile_activity_seller_account_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/profile_activity_item">
 
             <ImageView
