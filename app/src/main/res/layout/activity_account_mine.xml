@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LastOredersActivity">
+    tools:context=".AccountMineActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/last_orders_activity_recycler_view"
+        android:id="@+id/accounts_mine_activity_recycler_view"
         android:layout_width="409dp"
-        android:layout_height="0dp"
+        android:layout_height="601dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

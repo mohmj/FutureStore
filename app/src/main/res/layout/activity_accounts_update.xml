@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/accounts_update_activity_select_image_button"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/Default2"
+        android:text="choose image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/accounts_update_activity_name_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/default_edit_text"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/Default3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accounts_update_activity_select_image_button" />
+
+    <EditText
+        android:id="@+id/accounts_update_activity_price_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/default_edit_text"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Price"
+        android:inputType="numberDecimal"
+        android:padding="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/Default3"
+        app:layout_constraintEnd_toEndOf="@+id/accounts_update_activity_name_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/accounts_update_activity_name_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/accounts_update_activity_name_edit_text" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/accounts_update_activity_description_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/default_edit_text"
+        android:enabled="false"
+        android:gravity="clip_horizontal"
+        android:hint="Description"
+        android:padding="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColorHint="@color/Default3"
+        app:layout_constraintBottom_toTopOf="@+id/accounts_update_activity_phone_number_edit_text"
+        app:layout_constraintEnd_toEndOf="@+id/accounts_update_activity_price_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/accounts_update_activity_price_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/accounts_update_activity_price_edit_text" />
+
+    <EditText
+        android:id="@+id/accounts_update_activity_phone_number_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/default_edit_text"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Phone number"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/Default5"
+        android:textColorHighlight="@color/Default3"
+        android:textColorHint="@color/Default3"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+        app:layout_constraintEnd_toEndOf="@+id/accounts_update_activity_description_edit_text"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/accounts_update_activity_description_edit_text" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/update_accounts_activity_delete_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/default_red_button"
+            android:text="delete account"
+            android:textColor="@color/Default_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
