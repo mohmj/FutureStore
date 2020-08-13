@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CartCompleteActivity">
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:text="The payment was completed successfly"
+        android:textAlignment="center"
+        android:textColor="@color/Default5"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cart_complete_activity_track_orders_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/default_button"
+        android:text="Track orders"
+        android:textColor="@color/Default_font_color_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <Button
+        android:id="@+id/cart_complete_activity_home_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/default_button"
+        android:text="Home"
+        android:textColor="@color/Default_font_color_light"
+        app:layout_constraintEnd_toEndOf="@+id/cart_complete_activity_track_orders_button"
+        app:layout_constraintStart_toStartOf="@+id/cart_complete_activity_track_orders_button"
+        app:layout_constraintTop_toBottomOf="@+id/cart_complete_activity_track_orders_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>

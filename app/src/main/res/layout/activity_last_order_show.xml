@@ -6,4 +6,229 @@
     android:layout_height="match_parent"
     tools:context=".LastOrderShowActivity">
 
+    <TextView
+        android:id="@+id/last_order_show_activity_order_number_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/Default_font_color_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/last_order_show_activity_order_time_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/Default_font_color_dark"
+        app:layout_constraintStart_toStartOf="@+id/last_order_show_activity_order_number_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/last_order_show_activity_order_number_text_view" />
+
+    <TextView
+        android:id="@+id/last_order_show_activity_order_price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/Default_font_color_dark"
+        app:layout_constraintStart_toStartOf="@+id/last_order_show_activity_order_time_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/last_order_show_activity_order_time_text_view" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/last_order_show_activity_order_price_text_view">
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@color/Default1"
+            app:layout_constraintBottom_toBottomOf="@+id/last_order_activity_received_order_oval"
+            app:layout_constraintEnd_toEndOf="@+id/last_order_activity_received_order_oval"
+            app:layout_constraintStart_toStartOf="@+id/last_order_activity_received_order_oval"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_received_order_oval" />
+
+        <TextView
+            android:id="@+id/textView48"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@color/Default1"
+            app:layout_constraintBottom_toBottomOf="@+id/last_order_activity_received_order_oval"
+            app:layout_constraintEnd_toEndOf="@+id/last_order_activity_preparing_order_oval"
+            app:layout_constraintStart_toStartOf="@+id/last_order_activity_preparing_order_oval"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_received_order_oval" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@color/Default1"
+            app:layout_constraintBottom_toBottomOf="@+id/last_order_activity_received_order_oval"
+            app:layout_constraintEnd_toEndOf="@+id/last_order_activity_out_for_delivery_order_oval"
+            app:layout_constraintStart_toStartOf="@+id/last_order_activity_out_for_delivery_order_oval"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_received_order_oval" />
+
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@color/Default1"
+            app:layout_constraintBottom_toBottomOf="@+id/last_order_activity_received_order_oval"
+            app:layout_constraintEnd_toEndOf="@+id/last_order_activity_delivered_order_oval"
+            app:layout_constraintStart_toStartOf="@+id/last_order_activity_delivered_order_oval"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_received_order_oval" />
+
+        <TextView
+            android:id="@+id/last_order_activity_received_order_line"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/profile_activity_item"
+            app:layout_constraintEnd_toStartOf="@+id/textView44"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView44" />
+
+        <TextView
+            android:id="@+id/last_order_activity_preparing_order_line"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@drawable/profile_activity_item"
+            app:layout_constraintEnd_toStartOf="@+id/textView48"
+            app:layout_constraintStart_toEndOf="@+id/textView44"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_received_order_line" />
+
+        <TextView
+            android:id="@+id/last_order_activity_out_for_delivery_order_line"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@drawable/profile_activity_item"
+            app:layout_constraintEnd_toStartOf="@+id/textView49"
+            app:layout_constraintStart_toEndOf="@+id/textView48"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_preparing_order_line" />
+
+        <TextView
+            android:id="@+id/last_order_activity_delivered_order_first_line"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@drawable/profile_activity_item"
+            app:layout_constraintEnd_toStartOf="@+id/textView50"
+            app:layout_constraintStart_toEndOf="@+id/textView49"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_out_for_delivery_order_line" />
+
+        <TextView
+            android:id="@+id/last_order_activity_delivered_order_second_line"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@drawable/profile_activity_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView50"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_delivered_order_first_line" />
+
+        <TextView
+            android:id="@+id/last_order_activity_delivered_order_oval"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/default_oval_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/last_order_activity_out_for_delivery_order_oval"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_out_for_delivery_order_oval" />
+
+        <TextView
+            android:id="@+id/last_order_activity_received_order_oval"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/default_oval_white"
+            app:layout_constraintEnd_toStartOf="@+id/last_order_activity_preparing_order_oval"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+        <TextView
+            android:id="@+id/last_order_activity_preparing_order_oval"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/default_oval_white"
+            app:layout_constraintEnd_toStartOf="@+id/last_order_activity_out_for_delivery_order_oval"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/last_order_activity_received_order_oval"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_received_order_oval" />
+
+        <TextView
+            android:id="@+id/last_order_activity_out_for_delivery_order_oval"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="200dp"
+            android:background="@drawable/default_oval_white"
+            app:layout_constraintEnd_toStartOf="@+id/last_order_activity_delivered_order_oval"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/last_order_activity_preparing_order_oval"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/last_order_activity_preparing_order_oval" />
+
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preparing"
+            android:textColor="@color/Default_font_color_dark"
+            app:layout_constraintEnd_toStartOf="@+id/textView57"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView55"
+            app:layout_constraintTop_toTopOf="@+id/textView55" />
+
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Received"
+            android:textColor="@color/Default_font_color_dark"
+            app:layout_constraintEnd_toStartOf="@+id/textView56"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivered"
+            android:textColor="@color/Default_font_color_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView57"
+            app:layout_constraintTop_toTopOf="@+id/textView57" />
+
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Out for\nDelivery"
+            android:textColor="@color/Default_font_color_dark"
+            app:layout_constraintEnd_toStartOf="@+id/textView58"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView56"
+            app:layout_constraintTop_toTopOf="@+id/textView56" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/last_order_show_activity_recycler_view"
+        android:layout_width="409dp"
+        android:layout_height="410dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -88,7 +88,7 @@ class MenuActivity : AppCompatActivity() {
                 category(category.programs_and_games,resources.getString(R.string.programs_and_games))
             }
             menu_activity_buy_and_sale_accounts_button.setOnClickListener(){
-                category(category.buy_and_sale_accounts,resources.getString(R.string.buy_and_sale_account))
+                startActivity(Intent(this,AccountsActivity::class.java))
             }
         menu_activity_web_button.setOnClickListener(){
             val url = "http://www.softwareclinics.com/"

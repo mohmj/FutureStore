@@ -25,6 +25,14 @@ class Database (){
     var status_preparing="Preparing_Order"
     var status_out_for_delivery="Out_for_Delivery"
     var status_deliverd="Delivered"
+    var orders="orders"
     var last_order="last_order"
     var order_number="order_number"
+
+    var accounts="buy_and_sale_accounts"
+    var products="products"
+    var computer="computer"
+    var laptop="laptop"
+    var programs_and_games="programs_and_games"
+    var special_offers="special_offers"
 }

@@ -1,5 +1,6 @@
 package com.example.futurestore
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -48,46 +49,8 @@ class CartPaymentActivity : AppCompatActivity() {
             if(payment_method=="null") {
                 Toast.makeText(this,"You must choose payment method",Toast.LENGTH_SHORT).show()
             }else{
-            var check_status=Database().status_deliverd
-            Firebase.database.getReference("orders").addListenerForSingleValueEvent(object:ValueEventListener{
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    snapshot.children.forEach {
-                        var check=it.getValue(LastOrderInformation::class.java)
-                        if(check != null){
-                            if(check.uid==uid){
-                                check_status=check.status
-                            }
-                        }
-                    }
-                }
-
-            })
-
-            if(check_status != Database().status_deliverd) {
-                Toast.makeText(this,"You can't order when last order is not delievird. Contact us for more information",Toast.LENGTH_LONG).show()
-            }else {
                 var time = LocalDateTime.now().toString()
-                var timee = time
-                cartReference.addListenerForSingleValueEvent(object : ValueEventListener {
-                    override fun onCancelled(error: DatabaseError) {
-                        TODO("Not yet implemented")
-                    }
 
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        snapshot.children.forEach {
-                            var product = it.getValue(ProductInformation::class.java)
-                            if (product != null) {
-                                orders.child("products").child(product.name).setValue(product)
-                                ordersUser.child("products").child(product.name).setValue(product)
-                            }
-                        }
-                    }
-
-                })
                 addressReference.addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onCancelled(error: DatabaseError) {
                         TODO("Not yet implemented")
@@ -123,6 +86,27 @@ class CartPaymentActivity : AppCompatActivity() {
                         }
                     }
                 })
+
+                cartReference.addListenerForSingleValueEvent(object:ValueEventListener{
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        snapshot.children.forEach {
+                            var product=it.getValue(ProductInformation::class.java)
+                            if(product != null){
+                                orders.child("products").child(product.name).setValue(product)
+                                ordersUser.child("products").child(product.name).setValue(product)
+                            }
+                        }
+                    }
+
+                })
+
+
+
+
                 orders.child("total").setValue(total)
                 orders.child(Database().status).setValue(Database().status_received)
                 orders.child("time").setValue(time)
@@ -133,8 +117,10 @@ class CartPaymentActivity : AppCompatActivity() {
                 ordersUser.child(Database().status).setValue(Database().status_received)
                 ordersUser.child("time").setValue(time)
                 ordersUser.child("order_number").setValue(uuid)
+                var intent= Intent(this,CartCompleteActivity::class.java)
+                intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
             }
-        }
         }
 
 
