@@ -16,6 +16,7 @@ class CartAdapter (var item:ProductInformation): Item<ViewHolder>() {
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.cart_item_product_name_text_view.text=item.name
         viewHolder.itemView.cart_item_product_price_text_view.text="${item.price}  SR"
+        viewHolder.itemView.cart_item_product_department_text_view.text=item.category
         Picasso.get().load(item.imageLink).into(viewHolder.itemView.cart_item_product_image_view)
     }
 

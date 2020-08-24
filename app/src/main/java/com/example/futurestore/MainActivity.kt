@@ -56,6 +56,9 @@ class MainActivity : AppCompatActivity() {
         })
 
 
+
+
+
         // Special offers
         main_activity_special_offers_recycler_view.layoutManager=StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
         var specialOffersAdapter=GroupAdapter<ViewHolder>()

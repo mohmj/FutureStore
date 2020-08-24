@@ -87,6 +87,9 @@ class CartPaymentActivity : AppCompatActivity() {
                     }
                 })
 
+
+
+
                 cartReference.addListenerForSingleValueEvent(object:ValueEventListener{
                     override fun onCancelled(error: DatabaseError) {
                         TODO("Not yet implemented")
@@ -112,10 +115,13 @@ class CartPaymentActivity : AppCompatActivity() {
                 orders.child("time").setValue(time)
                 orders.child("order_number").setValue(uuid)
                 orders.child("uid").setValue(uid)
+                orders.child("worker").setValue("null")
 
                 ordersUser.child("total").setValue(total)
                 ordersUser.child(Database().status).setValue(Database().status_received)
                 ordersUser.child("time").setValue(time)
+                ordersUser.child("worker").setValue("null")
+
                 ordersUser.child("order_number").setValue(uuid)
                 var intent= Intent(this,CartCompleteActivity::class.java)
                 intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)

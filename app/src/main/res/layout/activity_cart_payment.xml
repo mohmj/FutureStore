@@ -87,7 +87,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="END THE ORDER"
+            android:text="PLACE ORDER"
             android:textColor="@color/Default_font_color_light"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"

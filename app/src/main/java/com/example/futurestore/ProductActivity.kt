@@ -39,7 +39,6 @@ class ProductActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
             override fun onDataChange(snapshot: DataSnapshot) {
                 var adapter=GroupAdapter<ViewHolder>()
                 snapshot.children.forEach(){
@@ -47,7 +46,6 @@ class ProductActivity : AppCompatActivity() {
                     if(pro != null){
                         adapter.add(ProudctAdapter(pro))
                     }
-
                 }
 
 
@@ -59,14 +57,7 @@ class ProductActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
             }
-
         })
-
-
-
-
-
-
     }
 }
 
