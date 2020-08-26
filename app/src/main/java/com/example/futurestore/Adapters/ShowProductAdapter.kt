@@ -14,7 +14,7 @@ class ShowProductAdapter(var product:ProductInformation): Item<ViewHolder>() {
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.product_item_name_text_view.text=product.name
-        viewHolder.itemView.product_item_price_text_view.text=product.price
+        viewHolder.itemView.product_item_price_text_view.text=product.price.toString()
         Picasso.get().load(product.imageLink).into(viewHolder.itemView.product_item_image_view)
 
     }

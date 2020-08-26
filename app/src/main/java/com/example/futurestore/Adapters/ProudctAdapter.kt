@@ -15,7 +15,7 @@ class ProudctAdapter(var info: ProductInformation): Item<ViewHolder>(){
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.product_item_name_text_view.text=info.name
-        viewHolder.itemView.product_item_price_text_view.text=info.price
+        viewHolder.itemView.product_item_price_text_view.text=info.price.toString()
         if(info.imageLink != ""){
             Picasso.get().load(info.imageLink).into(viewHolder.itemView.product_item_image_view)
         }

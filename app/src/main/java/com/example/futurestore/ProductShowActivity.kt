@@ -50,7 +50,7 @@ class ProductShowActivity : AppCompatActivity() {
                     ProductInformation(
                         productName,
                         productCategory,
-                        productPrice,
+                        productPrice.toDouble(),
                         1,
                         productImageLink,
                         productDescription
@@ -73,7 +73,7 @@ class ProductShowActivity : AppCompatActivity() {
                     ProductInformation(
                         productName,
                         productCategory,
-                        productPrice,
+                        productPrice.toDouble(),
                         1,
                         productImageLink,
                         productDescription

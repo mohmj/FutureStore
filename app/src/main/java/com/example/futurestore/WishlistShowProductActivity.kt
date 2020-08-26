@@ -48,7 +48,7 @@ class WishlistShowProductActivity : AppCompatActivity() {
                 ProductInformation(
                     productName,
                     productCategory,
-                    productPrice,
+                    productPrice.toDouble(),
                     1,
                     productImageLink,
                     productDescription
