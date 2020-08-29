@@ -18,6 +18,9 @@ class CartShowProductActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cart_show_product)
 
         var uid=Firebase.auth.uid
+
+        var productNumber=intent.getParcelableExtra<ProductInformation>("tesla")?.productNumber.toString()
+
         val productName=intent.getParcelableExtra<ProductInformation>("tesla")?.name.toString()
         cart_show_product_activity_name_text_view.text=productName
 
@@ -47,6 +50,7 @@ class CartShowProductActivity : AppCompatActivity() {
         cart_show_product_activity_add_wish_list_button.setOnClickListener(){
             Firebase.database.getReference("users/$uid/wish_list").child(productName).setValue(
                 ProductInformation(
+                    productNumber,
                     productName,
                     productCategory,
                     productPrice.toDouble(),

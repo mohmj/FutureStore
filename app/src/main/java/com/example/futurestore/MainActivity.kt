@@ -29,6 +29,11 @@ class MainActivity : AppCompatActivity() {
 
 
         // Desktop
+
+        textView3.setOnClickListener(){
+            startActivity(Intent(this,BuilderActivity::class.java))
+        }
+
         main_activity_desktop_recycler_view.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
         var desktopAdapter=GroupAdapter<ViewHolder>()
         var desktopReference=Firebase.database.getReference("products/computer/desktop")

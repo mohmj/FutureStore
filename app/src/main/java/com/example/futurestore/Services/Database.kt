@@ -38,4 +38,7 @@ class Database (){
 
     var update_account_intent="update_account_intent"
     var show_account_intent="show_account_intent"
+
+    var builder_item="builder_item"
+    var builder_CPU_socket_type="CPU_socket_type"
 }

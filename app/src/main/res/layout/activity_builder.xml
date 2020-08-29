@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuilderActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/builder_activity_add_to_cart_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/profile_signin_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline9">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD TO CART"
+            android:textColor="@color/Default_font_color_light"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/builder_activity_add_to_cart_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/builder_activity_CPU_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/default_line_light">
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Processor"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.496" />
+
+                <ImageView
+                    android:id="@+id/builder_activity_CPU_image_view"
+                    android:layout_width="80dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toTopOf="@+id/builder_activity_CPU_price_text_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+                    app:srcCompat="@drawable/cpu" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView35"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_CPU_image_view"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/builder_activity_CPU_name_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/builder_activity_CPU_image_view"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_CPU_socket_type_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="CPU_socket_type"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@+id/builder_activity_CPU_name_text_view"
+                        app:layout_constraintTop_toBottomOf="@+id/builder_activity_CPU_name_text_view" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_CPU_number_of_cores_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="number_of_cores"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@+id/builder_activity_CPU_socket_type_text_view"
+                        app:layout_constraintTop_toBottomOf="@+id/builder_activity_CPU_socket_type_text_view" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_CPU_core_clock_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="core_clock"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_CPU_boost_clock_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Boost clock"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/builder_activity_CPU_price_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="price"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/builder_activity_motherboard_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/default_line_light">
+
+                <TextView
+                    android:id="@+id/textView350"
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="motherboard"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/builder_activity_motherboard_image_view"
+                    android:layout_width="80dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toTopOf="@+id/builder_activity_motherboard_price_text_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout30"
+                    app:srcCompat="@drawable/motherboard" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView350"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_motherboard_image_view"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/builder_activity_motherboard_name_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/builder_activity_motherboard_image_view"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_motherboard_socket_type_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="CPU_socket_type"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@+id/builder_activity_motherboard_name_text_view"
+                        app:layout_constraintTop_toBottomOf="@+id/builder_activity_motherboard_name_text_view" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_motherboard_chipset_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="chipset"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_motherboard_form_factor_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Form_factor"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@+id/builder_activity_motherboard_socket_type_text_view"
+                        app:layout_constraintTop_toBottomOf="@+id/builder_activity_motherboard_socket_type_text_view" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_motherboard_memory_frequency_max_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="memory_frequency_max"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_motherboard_memory_max_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="memory_max"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_motherboard_memory_number_of_slots_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="memory_number_of_slots"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_motherboard_memory_pins_of_slots_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="memory_pins_of_slots"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/builder_activity_motherboard_price_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="price"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout30"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayout30"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/builder_activity_RAM_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/default_line_light">
+
+                <TextView
+                    android:id="@+id/textView3500"
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="RAM"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/builder_activity_RAM_image_view"
+                    android:layout_width="80dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toTopOf="@+id/builder_activity_RAM_price_text_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout300"
+                    app:srcCompat="@drawable/ram" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout300"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView3500"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_RAM_image_view"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/builder_activity_RAM_name_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_RAM_total_giga_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Total_giga"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_RAM_type_of_RAM_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Type_of_RAM"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_RAM_speed_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Speed"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_RAM_pins_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Pins"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_RAM_number_of_slice_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Number_of_slice"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_RAM_CAS_latency_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="CAS_latency"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/builder_activity_RAM_price_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="price"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout300"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayout300"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/builder_activity_case_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/default_line_light">
+
+                <TextView
+                    android:id="@+id/textView68"
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Case"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/builder_activity_case_image_view"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/computer_case" />
+
+                <TextView
+                    android:id="@+id/builder_activity_case_price_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="price"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayout4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/builder_activity_case_image_view" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/textView68"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_case_image_view"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/builder_activity_case_name_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_case_type_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Type"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/builder_activity_case_form_factor_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Form_factor"
+                        android:textColor="@color/Default_font_color_dark"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

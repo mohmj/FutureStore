@@ -20,6 +20,9 @@ class ProductShowActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_product)
         var uid = Firebase.auth.uid
+
+        var productNumber=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.productNumber.toString()
+
         val productName =
             intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.name.toString()
         show_product_activity_name_text_view.text = productName
@@ -48,6 +51,7 @@ class ProductShowActivity : AppCompatActivity() {
             } else {
                 Firebase.database.getReference("users/$uid/cart").child(productName).setValue(
                     ProductInformation(
+                        productNumber,
                         productName,
                         productCategory,
                         productPrice.toDouble(),
@@ -71,6 +75,7 @@ class ProductShowActivity : AppCompatActivity() {
             } else {
                 Firebase.database.getReference("users/$uid/wish_list").child(productName).setValue(
                     ProductInformation(
+                        productNumber,
                         productName,
                         productCategory,
                         productPrice.toDouble(),

@@ -7,7 +7,7 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.product_item.view.*
 
-class ProudctAdapter(var info: ProductInformation): Item<ViewHolder>(){
+class ProductAdapter(var info: ProductInformation): Item<ViewHolder>(){
 
     override fun getLayout(): Int {
         return R.layout.product_item
