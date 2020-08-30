@@ -60,6 +60,15 @@ class BuilderShowProductActivity : AppCompatActivity() {
         var motherboard_memory_pins_slots=0
         var motherboard_chipset=""
 
+        //GPU
+        var GPU_product_number=""
+        var GPU_name : String="";
+        var GPU_category : String="";
+        var GPU_price : Double=0.0;
+        var GPU_quantity : Int=0;
+        var GPU_image_link : String="";
+        var GPU_description : String="";
+
         //RAM
         var RAM_product_number=""
         var RAM_name : String="";
@@ -103,8 +112,6 @@ class BuilderShowProductActivity : AppCompatActivity() {
                 Picasso.get().load(productInformation?.imageLink).into(builder_show_product_activity_image_view)
 
 
-
-
                 Firebase.database.getReference("products/$category").addListenerForSingleValueEvent(object:ValueEventListener{
                     override fun onCancelled(error: DatabaseError) {
                         TODO("Not yet implemented")
@@ -132,7 +139,6 @@ class BuilderShowProductActivity : AppCompatActivity() {
                             }
                         }
                     }
-
                 })
 
                 builder_show_product_activity_add_to_builder_button.setOnClickListener(){
@@ -151,6 +157,9 @@ class BuilderShowProductActivity : AppCompatActivity() {
                         CPU_TDP,
                         CPU_integrated_graphics_card
                     )).addOnSuccessListener {
+                        Firebase.database.getReference("users/$uid/builder/motherboard").removeValue()
+                        Firebase.database.getReference("users/$uid/builder/RAM").removeValue()
+                        Firebase.database.getReference("users/$uid/builder/case").removeValue()
                         var intent=Intent(this,BuilderActivity::class.java)
                         intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
@@ -214,12 +223,65 @@ class BuilderShowProductActivity : AppCompatActivity() {
                                 motherboard_memory_pins_slots,
                                 motherboard_chipset
                     )).addOnSuccessListener {
+                        Firebase.database.getReference("users/$uid/builder/RAM").removeValue()
+                        Firebase.database.getReference("users/$uid/builder/case").removeValue()
                         var intent=Intent(this,BuilderActivity::class.java)
                         intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
                     }
                 }
             }
+
+            "computer/GPU"->{
+                var productInformation=intent.getParcelableExtra<ProductInformation>("one")
+                builder_show_product_activity_name_text_view.text=productInformation?.name
+                builder_show_product_activity_price_text_view.text=productInformation?.price.toString()
+                builder_show_product_activity_description_text_view.text=productInformation?.description
+                var productNumber=productInformation?.productNumber.toString()
+                Picasso.get().load(productInformation?.imageLink).into(builder_show_product_activity_image_view)
+
+                Firebase.database.getReference("products/computer/GPU").addListenerForSingleValueEvent(object:ValueEventListener{
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        snapshot.children.forEach {
+                            var thisGPU=it.getValue(ProductInformation::class.java)
+                            if(thisGPU != null){
+                                if(thisGPU.productNumber==productNumber){
+                                    GPU_product_number= thisGPU.productNumber
+                                    GPU_name= thisGPU.name
+                                    GPU_category= thisGPU.category
+                                    GPU_price= thisGPU.price
+                                    GPU_quantity= thisGPU.quantity
+                                    GPU_image_link= thisGPU.imageLink
+                                    GPU_description= thisGPU.description
+                                }
+                            }
+                        }
+                    }
+
+                })
+
+
+                builder_show_product_activity_add_to_builder_button.setOnClickListener(){
+                    Firebase.database.getReference("users/$uid/builder/GPU").setValue(ProductInformation(
+                        GPU_product_number,
+                        GPU_name,
+                        GPU_category,
+                        GPU_price,
+                        GPU_quantity,
+                        GPU_image_link,
+                        GPU_description
+                    )).addOnSuccessListener {
+                        var intent=Intent(this,BuilderActivity::class.java)
+                        intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
+                     }
+                }
+            }
+
             "computer/RAM"->{
                 var productInformation=intent.getParcelableExtra<ComputerRAM>("one")
                 builder_show_product_activity_name_text_view.text=productInformation?.name
@@ -282,8 +344,9 @@ class BuilderShowProductActivity : AppCompatActivity() {
                     }
                 }
             }
+
             "computer/case"->{
-                var productInformation=intent.getParcelableExtra<ComputerRAM>("one")
+                var productInformation=intent.getParcelableExtra<ComputerCase>("one")
                 builder_show_product_activity_name_text_view.text=productInformation?.name
                 builder_show_product_activity_price_text_view.text=productInformation?.price.toString()
                 builder_show_product_activity_description_text_view.text=productInformation?.description

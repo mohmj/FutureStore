@@ -37,7 +37,6 @@ class BuilderProductsActivity : AppCompatActivity() {
         builder_product_activity_recycler_view.layoutManager=StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
 
         var category=intent.getStringExtra(Database().builder_item).toString()
-        Toast.makeText(this,category,Toast.LENGTH_SHORT).show()
         var CPUSocketType=""
         var memoryFrequencyMax=0
         var memoryMax=0
@@ -111,6 +110,31 @@ class BuilderProductsActivity : AppCompatActivity() {
                                     })
                                 }
                             }
+                        }
+                    }
+
+                })
+            }
+            "GPU"->{
+                Firebase.database.getReference("products/computer/$category").addListenerForSingleValueEvent(object:ValueEventListener{
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        snapshot.children.forEach {
+                            var thisGPU=it.getValue(ProductInformation::class.java)
+                            if(thisGPU != null){
+                                adapter.add(ProductAdapter(thisGPU))
+                            }
+                        }
+                        builder_product_activity_recycler_view.adapter=adapter
+                        adapter.setOnItemClickListener { item, view ->
+                            var intent=Intent(view.context,BuilderShowProductActivity::class.java)
+                            var intity=item as ProductAdapter
+                            intent.putExtra("category","computer/GPU")
+                            intent.putExtra("one",intity.info)
+                            startActivity(intent)
                         }
                     }
 
@@ -191,7 +215,7 @@ class BuilderProductsActivity : AppCompatActivity() {
                                             }
                                             builder_product_activity_recycler_view.adapter=adapter
                                             adapter.setOnItemClickListener { item, view ->
-                                                var intent=Intent(view.context,ComputerCase::class.java)
+                                                var intent=Intent(view.context,BuilderShowProductActivity::class.java)
                                                 var intity=item as CaseAdapter
                                                 intent.putExtra("category","computer/case")
                                                 intent.putExtra("one",intity.item)

@@ -60,6 +60,19 @@
                 android:background="@drawable/default_line_light">
 
                 <TextView
+                    android:id="@+id/builder_activity_CPU_name_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_CPU_image_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
                     android:id="@+id/textView35"
                     android:layout_width="104dp"
                     android:layout_height="wrap_content"
@@ -82,8 +95,7 @@
                     android:scaleType="fitCenter"
                     app:layout_constraintBottom_toTopOf="@+id/builder_activity_CPU_price_text_view"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/linearLayout3"
-                    app:srcCompat="@drawable/cpu" />
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout3" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout3"
@@ -97,24 +109,13 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textView35"
                     app:layout_constraintStart_toEndOf="@+id/builder_activity_CPU_image_view"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/builder_activity_CPU_name_text_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textColor="@color/Default_font_color_dark"
-                        android:textSize="16sp"
-                        app:layout_constraintStart_toEndOf="@+id/builder_activity_CPU_image_view"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/builder_activity_CPU_name_text_view">
 
                     <TextView
                         android:id="@+id/builder_activity_CPU_socket_type_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="CPU_socket_type"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="@+id/builder_activity_CPU_name_text_view"
@@ -125,7 +126,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="number_of_cores"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="@+id/builder_activity_CPU_socket_type_text_view"
@@ -136,7 +136,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="core_clock"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -145,7 +144,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Boost clock"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -156,13 +154,24 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="price"
                     android:textAlignment="center"
                     android:textColor="@color/Default_font_color_dark"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
                     app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
                     app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_select_processor_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a processor"
+                    android:textColor="@color/Default_red"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView35"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -195,8 +204,20 @@
                     android:scaleType="fitCenter"
                     app:layout_constraintBottom_toTopOf="@+id/builder_activity_motherboard_price_text_view"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/linearLayout30"
-                    app:srcCompat="@drawable/motherboard" />
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout30" />
+
+                <TextView
+                    android:id="@+id/builder_activity_motherboard_name_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_motherboard_image_view"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout30"
@@ -210,24 +231,13 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textView350"
                     app:layout_constraintStart_toEndOf="@+id/builder_activity_motherboard_image_view"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/builder_activity_motherboard_name_text_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textColor="@color/Default_font_color_dark"
-                        android:textSize="16sp"
-                        app:layout_constraintStart_toEndOf="@+id/builder_activity_motherboard_image_view"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/builder_activity_motherboard_name_text_view">
 
                     <TextView
                         android:id="@+id/builder_activity_motherboard_socket_type_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="CPU_socket_type"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="@+id/builder_activity_motherboard_name_text_view"
@@ -238,7 +248,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="chipset"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -247,7 +256,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Form_factor"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="@+id/builder_activity_motherboard_socket_type_text_view"
@@ -258,7 +266,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="memory_frequency_max"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -267,7 +274,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="memory_max"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -276,7 +282,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="memory_number_of_slots"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -285,7 +290,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="memory_pins_of_slots"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -296,7 +300,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="price"
                     android:textAlignment="center"
                     android:textColor="@color/Default_font_color_dark"
                     android:textSize="18sp"
@@ -304,6 +307,86 @@
                     app:layout_constraintEnd_toStartOf="@+id/linearLayout30"
                     app:layout_constraintStart_toStartOf="parent" />
 
+                <TextView
+                    android:id="@+id/builder_activity_select_motherboard_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a  motherboard"
+                    android:textColor="@color/Default_red"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView350"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/builder_activity_GPU_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/default_line_light">
+
+                <TextView
+                    android:id="@+id/GPUtextView68"
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="GPU"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/builder_activity_GPU_image_view"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_GPU_price_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/builder_activity_GPU_image_view" />
+
+                <TextView
+                    android:id="@+id/builder_activity_select_GPU_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a GPU"
+                    android:textColor="@color/Default_red"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/GPUtextView68"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_GPU_name_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/GPUtextView68"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_GPU_image_view"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -336,7 +419,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/builder_activity_RAM_price_text_view"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/linearLayout300"
-                    app:srcCompat="@drawable/ram" />
+                    />
 
                 <LinearLayout
                     android:id="@+id/linearLayout300"
@@ -350,22 +433,13 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textView3500"
                     app:layout_constraintStart_toEndOf="@+id/builder_activity_RAM_image_view"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/builder_activity_RAM_name_text_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textColor="@color/Default_font_color_dark"
-                        android:textSize="16sp" />
+                    app:layout_constraintTop_toBottomOf="@+id/builder_activity_RAM_name_text_view">
 
                     <TextView
                         android:id="@+id/builder_activity_RAM_total_giga_text_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Total_giga"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -374,7 +448,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Type_of_RAM"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -383,7 +456,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Speed"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -392,16 +464,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Pins"
-                        android:textColor="@color/Default_font_color_dark"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/builder_activity_RAM_number_of_slice_text_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Number_of_slice"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
 
@@ -410,7 +472,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="CAS_latency"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -420,13 +481,37 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="price"
                     android:textAlignment="center"
                     android:textColor="@color/Default_font_color_dark"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@+id/linearLayout300"
                     app:layout_constraintEnd_toStartOf="@+id/linearLayout300"
                     app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_select_RAM_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a  RAM"
+                    android:textColor="@color/Default_red"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView3500"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_RAM_name_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_RAM_image_view"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -458,15 +543,14 @@
                     android:layout_marginTop="8dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/computer_case" />
+                     />
 
                 <TextView
                     android:id="@+id/builder_activity_case_price_text_view"
                     android:layout_width="0dp"
-                    android:layout_height="24dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="price"
                     android:textAlignment="center"
                     android:textColor="@color/Default_font_color_dark"
                     android:textSize="18sp"
@@ -485,22 +569,13 @@
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/textView68"
                     app:layout_constraintStart_toEndOf="@+id/builder_activity_case_image_view"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/builder_activity_case_name_text_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textColor="@color/Default_font_color_dark"
-                        android:textSize="16sp" />
+                    app:layout_constraintTop_toBottomOf="@+id/builder_activity_case_name_text_view">
 
                     <TextView
                         android:id="@+id/builder_activity_case_type_text_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Type"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16dp" />
 
@@ -509,10 +584,34 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Form_factor"
                         android:textColor="@color/Default_font_color_dark"
                         android:textSize="16dp" />
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/builder_activity_select_case_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a case"
+                    android:textColor="@color/Default_red"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView68"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_case_name_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_case_image_view"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             category(category.RAM,resources.getString(R.string.ram))
         }
         main_activity_hardisks_categories.setOnClickListener(){
-            category(category.hard_disk,resources.getString(R.string.hard_disk))
+            category(category.memory,"Memory")
         }
         main_activity_water_cooler_categories.setOnClickListener(){
             category(category.water_cooler,resources.getString(R.string.water_cooling))

@@ -18,6 +18,8 @@ class SigninActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
 
+        var fromPage=intent.getStringExtra("login")
+
         auth= Firebase.auth
 
         reset_password_activity_button.setOnClickListener(){
@@ -27,9 +29,14 @@ class SigninActivity : AppCompatActivity() {
             if(email.isNotEmpty() && password.isNotEmpty()){
                 auth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
                     Toast.makeText(this,resources.getString(R.string.sign_in_successful),Toast.LENGTH_SHORT).show()
-                    var mainIntent=Intent(this,MainActivity::class.java)
-                    mainIntent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    startActivity(mainIntent)
+                    if(fromPage=="builder"){
+                        finish()
+                    }else{
+                        var mainIntent=Intent(this,MainActivity::class.java)
+                        mainIntent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(mainIntent)
+                    }
+
                 }.addOnFailureListener(){
                     Toast.makeText(this,"${it.message}",Toast.LENGTH_SHORT).show()
                 }
