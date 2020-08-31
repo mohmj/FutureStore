@@ -114,10 +114,16 @@ class MainActivity : AppCompatActivity() {
             category(category.memory,"Memory")
         }
         main_activity_water_cooler_categories.setOnClickListener(){
-            category(category.water_cooler,resources.getString(R.string.water_cooling))
+//            category(category.water_cooler,resources.getString(R.string.water_cooling))
+            var intent=Intent(this,ProductCoolerActivity::class.java)
+            intent.putExtra("type_of_cooler","water_cooler")
+            startActivity(intent)
         }
         main_activity_air_cooler_categories.setOnClickListener(){
-            category(category.air_cooler,resources.getString(R.string.air_cooling))
+//            category(category.air_cooler,resources.getString(R.string.air_cooling))
+            var intent=Intent(this,ProductCoolerActivity::class.java)
+            intent.putExtra("type_of_cooler","air_cooler")
+            startActivity(intent)
         }
         main_activity_case_categories.setOnClickListener(){
             category(category.case,resources.getString(R.string.cases))
@@ -127,6 +133,9 @@ class MainActivity : AppCompatActivity() {
         }
         main_activity_sound_card_categories.setOnClickListener(){
             category(category.sound_card,resources.getString(R.string.sound_card))
+        }
+        main_activity_builder_button.setOnClickListener(){
+            startActivity(Intent(this,BuilderActivity::class.java))
         }
 
 

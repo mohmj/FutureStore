@@ -9,15 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BuilderProductCpuActivity"></activity>
+        <activity android:name=".ProductCoolerActivity"></activity>
+        <activity android:name=".ShowProductCoolerActivity" />
+        <activity android:name=".BuilderProductCpuActivity" />
         <activity android:name=".BuilderShowProductActivity" />
         <activity android:name=".BuilderProductsActivity" />
         <activity android:name=".BuilderActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".AccountShowActivity" />
         <activity android:name=".AccountsUpdateActivity" />
@@ -60,12 +64,11 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

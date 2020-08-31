@@ -85,6 +85,24 @@ class BuilderShowProductActivity : AppCompatActivity() {
         var RAM_total_giga=0;
         var RAM_CAS_latency=0;
 
+        //Memory
+        var memory_product_number=""
+        var memory_name : String="";
+        var memory_category : String="";
+        var memory_price : Double=0.0;
+        var memory_quantity : Int=0;
+        var memory_image_link : String="";
+        var memory_description : String="";
+
+        //Cooler
+        var cooler_product_number=""
+        var cooler_name : String="";
+        var cooler_category : String="";
+        var cooler_price : Double=0.0;
+        var cooler_quantity : Int=0;
+        var cooler_image_link : String="";
+        var cooler_description : String="";
+
         //Case
         var case_product_number=""
         var case_name : String="";
@@ -158,7 +176,10 @@ class BuilderShowProductActivity : AppCompatActivity() {
                         CPU_integrated_graphics_card
                     )).addOnSuccessListener {
                         Firebase.database.getReference("users/$uid/builder/motherboard").removeValue()
+                        Firebase.database.getReference("users/$uid/builder/GPU").removeValue()
                         Firebase.database.getReference("users/$uid/builder/RAM").removeValue()
+                        Firebase.database.getReference("users/$uid/builder/memory").removeValue()
+                        Firebase.database.getReference("users/$uid/builder/cooler").removeValue()
                         Firebase.database.getReference("users/$uid/builder/case").removeValue()
                         var intent=Intent(this,BuilderActivity::class.java)
                         intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -223,7 +244,10 @@ class BuilderShowProductActivity : AppCompatActivity() {
                                 motherboard_memory_pins_slots,
                                 motherboard_chipset
                     )).addOnSuccessListener {
+                        Firebase.database.getReference("users/$uid/builder/GPU").removeValue()
                         Firebase.database.getReference("users/$uid/builder/RAM").removeValue()
+                        Firebase.database.getReference("users/$uid/builder/memory").removeValue()
+                        Firebase.database.getReference("users/$uid/builder/cooler").removeValue()
                         Firebase.database.getReference("users/$uid/builder/case").removeValue()
                         var intent=Intent(this,BuilderActivity::class.java)
                         intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -337,6 +361,105 @@ class BuilderShowProductActivity : AppCompatActivity() {
                                 RAM_signle_giga,
                                 RAM_total_giga,
                                 RAM_CAS_latency
+                    )).addOnSuccessListener {
+                        var intent=Intent(this,BuilderActivity::class.java)
+                        intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
+                    }
+                }
+            }
+
+            "computer/memory"->{
+                var productInformation=intent.getParcelableExtra<ProductInformation>("one")
+                builder_show_product_activity_name_text_view.text=productInformation?.name
+                builder_show_product_activity_price_text_view.text=productInformation?.price.toString()
+                builder_show_product_activity_description_text_view.text=productInformation?.description
+                var productNumber=productInformation?.productNumber.toString()
+                Picasso.get().load(productInformation?.imageLink).into(builder_show_product_activity_image_view)
+
+                Firebase.database.getReference("products/computer/memory").addListenerForSingleValueEvent(object:ValueEventListener{
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        snapshot.children.forEach {
+                            var thisMemory=it.getValue(ProductInformation::class.java)
+                            if(thisMemory != null){
+                                if(thisMemory.productNumber==productNumber){
+                                    memory_product_number= thisMemory.productNumber
+                                    memory_name= thisMemory.name
+                                    memory_category= thisMemory.category
+                                    memory_price= thisMemory.price
+                                    memory_quantity= thisMemory.quantity
+                                    memory_image_link= thisMemory.imageLink
+                                    memory_description= thisMemory.description
+                                }
+                            }
+                        }
+                    }
+
+                })
+
+
+                builder_show_product_activity_add_to_builder_button.setOnClickListener(){
+                    Firebase.database.getReference("users/$uid/builder/memory").setValue(ProductInformation(
+                        memory_product_number,
+                        memory_name,
+                        memory_category,
+                        memory_price,
+                        memory_quantity,
+                        memory_image_link,
+                        memory_description
+                    )).addOnSuccessListener {
+                        var intent=Intent(this,BuilderActivity::class.java)
+                        intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
+                    }
+                }
+            }
+
+            "computer/cooler"->{
+                var productInformation=intent.getParcelableExtra<ProductInformation>("one")
+                builder_show_product_activity_name_text_view.text=productInformation?.name
+                builder_show_product_activity_price_text_view.text=productInformation?.price.toString()
+                builder_show_product_activity_description_text_view.text=productInformation?.description
+                var productNumber=productInformation?.productNumber.toString()
+                Picasso.get().load(productInformation?.imageLink).into(builder_show_product_activity_image_view)
+
+                Firebase.database.getReference("products/computer/cooler").addListenerForSingleValueEvent(object:ValueEventListener{
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        snapshot.children.forEach {
+                            var thisCooler=it.getValue(ProductInformation::class.java)
+                            if(thisCooler != null){
+                                if(thisCooler.productNumber==productNumber){
+                                    cooler_product_number= thisCooler.productNumber
+                                    cooler_name= thisCooler.name
+                                    cooler_category= thisCooler.category
+                                    cooler_price= thisCooler.price
+                                    cooler_quantity= thisCooler.quantity
+                                    cooler_image_link= thisCooler.imageLink
+                                    cooler_description= thisCooler.description
+                                }
+                            }
+                        }
+                    }
+
+                })
+
+                builder_show_product_activity_add_to_builder_button.setOnClickListener(){
+                    Firebase.database.getReference("users/$uid/builder/cooler").setValue(ProductInformation(
+                        cooler_product_number,
+                        cooler_name,
+                        cooler_category,
+                        cooler_price,
+                        cooler_quantity,
+                        cooler_image_link,
+                        cooler_description
                     )).addOnSuccessListener {
                         var intent=Intent(this,BuilderActivity::class.java)
                         intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)

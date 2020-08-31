@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Default_background"
+    tools:context=".ShowProductCoolerActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/product_activity_recycler_view_cooler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/Default_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_activity_search_edit_text_cooler" />
+
+    <EditText
+        android:id="@+id/product_activity_search_edit_text_cooler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/default_edit_text"
+        android:ems="10"
+        android:hint="Search"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/product_activity_search_image_view_cooler"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/product_activity_search_edit_text_cooler"
+        app:layout_constraintEnd_toEndOf="@+id/product_activity_search_edit_text_cooler"
+        app:layout_constraintTop_toTopOf="@+id/product_activity_search_edit_text_cooler"
+        app:srcCompat="@drawable/icons8_search_80px" />
+</androidx.constraintlayout.widget.ConstraintLayout>

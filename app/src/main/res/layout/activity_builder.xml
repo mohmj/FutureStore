@@ -354,7 +354,7 @@
                     android:id="@+id/builder_activity_GPU_price_text_view"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
                     android:textAlignment="center"
@@ -418,8 +418,7 @@
                     android:scaleType="fitCenter"
                     app:layout_constraintBottom_toTopOf="@+id/builder_activity_RAM_price_text_view"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/linearLayout300"
-                    />
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout300" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout300"
@@ -513,6 +512,142 @@
                     app:layout_constraintStart_toEndOf="@+id/builder_activity_RAM_image_view"
                     app:layout_constraintTop_toTopOf="parent" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/builder_activity_memory_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/default_line_light">
+
+                <TextView
+                    android:id="@+id/memorytextView68"
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Memory"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/builder_activity_memory_image_view"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_memory_price_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/builder_activity_memory_image_view" />
+
+                <TextView
+                    android:id="@+id/builder_activity_select_memory_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a Memory"
+                    android:textColor="@color/Default_red"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/memorytextView68"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_memory_name_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/memorytextView68"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_memory_image_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/builder_activity_cooler_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/default_line_light">
+
+                <TextView
+                    android:id="@+id/coolertextView68"
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Cooler"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/builder_activity_cooler_image_view"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_cooler_price_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/builder_activity_cooler_image_view" />
+
+                <TextView
+                    android:id="@+id/builder_activity_select_cooler_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a Cooler"
+                    android:textColor="@color/Default_red"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/coolertextView68"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/builder_activity_cooler_name_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/Default_font_color_dark"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/coolertextView68"
+                    app:layout_constraintStart_toEndOf="@+id/builder_activity_cooler_image_view"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout

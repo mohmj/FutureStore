@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Default_background"
+    tools:context=".ProductShowActivity">
+
+    <TextView
+        android:id="@+id/show_product_activity_name_text_view_cooler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/Default_font_color_dark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout_cooler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/product_price"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_product_activity_image_view_cooler">
+
+        <TextView
+            android:id="@+id/textView20_cooler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/price"
+            android:textColor="@color/Default_font_color_dark"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/show_product_activity_price_text_view_cooler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/Default_font_color_dark"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView20_cooler"
+            app:layout_constraintStart_toEndOf="@+id/textView20_cooler"
+            app:layout_constraintTop_toTopOf="@+id/textView20_cooler"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="150 sr" />
+
+        <ImageView
+            android:id="@+id/show_product_activity_cart_button_cooler"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:background="@color/Default_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/show_product_activity_wish_list_button_cooler"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/show_product_activity_price_text_view_cooler"
+            app:layout_constraintStart_toStartOf="@+id/guideline3_cooler"
+            app:layout_constraintTop_toTopOf="@+id/show_product_activity_price_text_view_cooler"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/icons8_add_shopping_cart_80px" />
+
+        <ImageView
+            android:id="@+id/show_product_activity_wish_list_button_cooler"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:background="@color/Default_background"
+            app:layout_constraintBottom_toBottomOf="@+id/show_product_activity_cart_button_cooler"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/show_product_activity_cart_button_cooler"
+            app:layout_constraintTop_toTopOf="@+id/show_product_activity_cart_button_cooler"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/icons8_heart_80px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3_cooler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout_cooler"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/product_show_activity_linear_layout_cooler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/show_product_activity_description_text_view_cooler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Default_background"
+                android:padding="5dp"
+                android:text="TextView"
+                android:textColor="@color/Default_font_color_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/show_product_activity_image_view_cooler"
+        android:layout_width="0dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/Default_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_product_activity_name_text_view_cooler"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -187,6 +187,56 @@ class BuilderProductsActivity : AppCompatActivity() {
 
                 })
             }
+            "memory"->{
+                Firebase.database.getReference("products/computer/$category").addListenerForSingleValueEvent(object:ValueEventListener{
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        snapshot.children.forEach {
+                            var thisMemory=it.getValue(ProductInformation::class.java)
+                            if(thisMemory != null){
+                                adapter.add(ProductAdapter(thisMemory))
+                            }
+                        }
+                        builder_product_activity_recycler_view.adapter=adapter
+                        adapter.setOnItemClickListener { item, view ->
+                            var intent=Intent(view.context,BuilderShowProductActivity::class.java)
+                            var intity=item as ProductAdapter
+                            intent.putExtra("category","computer/memory")
+                            intent.putExtra("one",intity.info)
+                            startActivity(intent)
+                        }
+                    }
+
+                })
+            }
+            "cooler"->{
+                Firebase.database.getReference("products/computer/$category").addListenerForSingleValueEvent(object:ValueEventListener{
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        snapshot.children.forEach {
+                            var thisMemory=it.getValue(ProductInformation::class.java)
+                            if(thisMemory != null){
+                                adapter.add(ProductAdapter(thisMemory))
+                            }
+                        }
+                        builder_product_activity_recycler_view.adapter=adapter
+                        adapter.setOnItemClickListener { item, view ->
+                            var intent=Intent(view.context,BuilderShowProductActivity::class.java)
+                            var intity=item as ProductAdapter
+                            intent.putExtra("category","computer/cooler")
+                            intent.putExtra("one",intity.info)
+                            startActivity(intent)
+                        }
+                    }
+
+                })
+            }
             "case"->{
                 Firebase.database.getReference("users/$uid/builder").addListenerForSingleValueEvent(object :ValueEventListener{
                     override fun onCancelled(error: DatabaseError) {
@@ -208,8 +258,25 @@ class BuilderProductsActivity : AppCompatActivity() {
                                             snapshot.children.forEach {
                                                 var thisCase=it.getValue(ComputerCase::class.java)
                                                 if(thisCase != null){
-                                                    if(thisCase.formFactor==formFactor){
-                                                        adapter.add(CaseAdapter(thisCase))
+                                                    when(formFactor){
+                                                        "micro ATX"->{
+                                                            adapter.add(CaseAdapter(thisCase))
+                                                        }
+                                                        "mini ATX"->{
+                                                            if(thisCase.formFactor != "micro ATX"){
+                                                                adapter.add(CaseAdapter(thisCase))
+                                                            }
+                                                        }
+                                                        "ATX"->{
+                                                            if(thisCase.formFactor != "micro ATX" && thisCase.formFactor != "mini ATX"){
+                                                                adapter.add(CaseAdapter(thisCase))
+                                                            }
+                                                        }
+                                                        "extend ATX"->{
+                                                            if(thisCase.formFactor=="extend ATX"){
+                                                                adapter.add(CaseAdapter(thisCase))
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }

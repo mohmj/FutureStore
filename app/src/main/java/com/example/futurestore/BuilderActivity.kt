@@ -3,6 +3,8 @@ package com.example.futurestore
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import com.example.futurestore.Models.Computer.ComputerCPU
 import com.example.futurestore.Models.Computer.ComputerCase
@@ -20,6 +22,9 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_builder.*
 
 class BuilderActivity : AppCompatActivity() {
+
+    var uid=Firebase.auth.uid
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_builder)
@@ -148,6 +153,50 @@ class BuilderActivity : AppCompatActivity() {
             }
         })
 
+        //Get memory
+        Firebase.database.getReference("users/$uid/builder").addListenerForSingleValueEvent(object:ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach {
+                    var thisMemory=it.getValue(ProductInformation::class.java)
+                    if(thisMemory != null){
+                        if(thisMemory.category=="computer/memory"){
+                            builder_activity_select_memory_text_view.text=""
+                            Picasso.get().load(thisMemory.imageLink).into(builder_activity_memory_image_view)
+                            builder_activity_memory_name_text_view.text=thisMemory.name.toString()
+                            builder_activity_memory_price_text_view.text="Price\n${thisMemory.price.toString()}"
+                        }
+                    }
+                }
+            }
+
+        })
+
+        //Get cooler
+        Firebase.database.getReference("users/$uid/builder").addListenerForSingleValueEvent(object:ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach {
+                    var thisMemory=it.getValue(ProductInformation::class.java)
+                    if(thisMemory != null){
+                        if(thisMemory.category=="computer/cooler"){
+                            builder_activity_select_cooler_text_view.text=""
+                            Picasso.get().load(thisMemory.imageLink).into(builder_activity_cooler_image_view)
+                            builder_activity_cooler_name_text_view.text=thisMemory.name.toString()
+                            builder_activity_cooler_price_text_view.text="Price\n${thisMemory.price.toString()}"
+                        }
+                    }
+                }
+            }
+
+        })
+
         //Get case
         Firebase.database.getReference("users/$uid/builder").addListenerForSingleValueEvent(object: ValueEventListener{
             override fun onCancelled(error: DatabaseError) {
@@ -172,26 +221,23 @@ class BuilderActivity : AppCompatActivity() {
         })
 
         builder_activity_CPU_button.setOnClickListener(){
-            if(Firebase.auth.uid==null){
-                startActivity(Intent(this,SigninActivity::class.java))
-            }else{
                 var intent= Intent(this,BuilderProductsActivity::class.java)
                 intent.putExtra(Database().builder_item,"CPU")
                 intent.putExtra(Database().builder_CPU_socket_type,CPUSocketType)
                 startActivity(intent)
-            }
         }
 
         builder_activity_GPU_button.setOnClickListener(){
-            var intent = Intent(this, BuilderProductsActivity::class.java)
-            intent.putExtra(Database().builder_item, "GPU")
-            startActivity(intent)
+            if(motherboardMemoryFrequencyMax==0){
+                Toast.makeText(this,"You must choose a motherboard before the RAM. ",Toast.LENGTH_SHORT).show()
+            }else {
+                var intent = Intent(this, BuilderProductsActivity::class.java)
+                intent.putExtra(Database().builder_item, "GPU")
+                startActivity(intent)
+            }
         }
 
         builder_activity_motherboard_button.setOnClickListener(){
-            if(Firebase.auth.uid==null){
-                startActivity(Intent(this,SigninActivity::class.java))
-            }else{
                 if(CPUSocketType==""){
                     Toast.makeText(this,"You must choose a processor before the motherboard. ",Toast.LENGTH_SHORT).show()
                 }else {
@@ -199,14 +245,11 @@ class BuilderActivity : AppCompatActivity() {
                     intent.putExtra(Database().builder_item, "motherboard")
                     startActivity(intent)
                 }
-            }
+
 
         }
 
         builder_activity_RAM_button.setOnClickListener(){
-            if(Firebase.auth.uid==null){
-                startActivity(Intent(this,SigninActivity::class.java))
-            }else{
                 if(motherboardMemoryFrequencyMax==0){
                     Toast.makeText(this,"You must choose a motherboard before the RAM. ",Toast.LENGTH_SHORT).show()
                 }else{
@@ -214,9 +257,26 @@ class BuilderActivity : AppCompatActivity() {
                     intent.putExtra(Database().builder_item,"RAM")
                     startActivity(intent)
                 }
+        }
+
+        builder_activity_memory_button.setOnClickListener(){
+            if(motherboardMemoryFrequencyMax==0){
+                Toast.makeText(this,"You must choose a motherboard before the memory. ",Toast.LENGTH_SHORT).show()
+            }else {
+                var intent = Intent(this, BuilderProductsActivity::class.java)
+                intent.putExtra(Database().builder_item, "memory")
+                startActivity(intent)
             }
+        }
 
-
+        builder_activity_cooler_button.setOnClickListener(){
+            if(motherboardMemoryFrequencyMax==0){
+                Toast.makeText(this,"You must choose a motherboard before the cooler. ",Toast.LENGTH_SHORT).show()
+            }else {
+                var intent = Intent(this, BuilderProductsActivity::class.java)
+                intent.putExtra(Database().builder_item, "cooler")
+                startActivity(intent)
+            }
         }
 
         builder_activity_case_button.setOnClickListener(){
@@ -232,6 +292,37 @@ class BuilderActivity : AppCompatActivity() {
                 }
             }
         }
+
+
+
+        //Add to cart
+        builder_activity_add_to_cart_button.setOnClickListener(){
+            Firebase.database.getReference("users/$uid/builder").addListenerForSingleValueEvent(object : ValueEventListener{
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onDataChange(snapshot: DataSnapshot) {
+                   snapshot.children.forEach {
+                       var theProduct=it.getValue(ProductInformation::class.java)
+                       if(theProduct != null){
+                           Firebase.database.getReference("users/$uid/cart/${theProduct.productNumber}").setValue(
+                               ProductInformation(
+                                   theProduct.productNumber,
+                                   theProduct.name,
+                                   theProduct.category,
+                                   theProduct.price,
+                                   theProduct.quantity,
+                                   theProduct.imageLink,
+                                   theProduct.description
+                               )
+                           )
+                       }
+                   }
+                }
+
+            })
+        }
     }
 
     override fun onRestart() {
@@ -244,5 +335,21 @@ class BuilderActivity : AppCompatActivity() {
         checkLogin()
         getProducts()
         super.onResume()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.builder_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var id=item.itemId
+        when(id){
+            R.id.builder_menu_delete->{
+                Firebase.database.getReference("users/$uid/builder").removeValue()
+                getProducts()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
