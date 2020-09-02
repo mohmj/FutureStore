@@ -32,9 +32,9 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent(this,AddressesActivity::class.java))
         }
 
-        profile_activity_seller_account_container.setOnClickListener(){
-            //Nothing until now
-        }
+//        profile_activity_seller_account_container.setOnClickListener(){
+//            //Nothing until now
+//        }
 
 
         if(uid != null){

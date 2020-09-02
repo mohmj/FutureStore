@@ -38,32 +38,61 @@ class ProductShowActivity : AppCompatActivity() {
             intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.description.toString()
         show_product_activity_description_text_view.text = productDescription
 
+        val productQuantity=intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.quantity
+
+        var quantity=1
+
         val productImageLink =
             intent.getParcelableExtra<ProductInformation>(Database().productInformation)?.imageLink.toString()
         if (productImageLink != "") {
             Picasso.get().load(productImageLink).into(show_product_activity_image_view)
         }
 
+        show_product_activity_quantity_add_button.setOnClickListener(){
+            if(quantity < productQuantity!!){
+                quantity++
+                show_product_activity_quantity_text_view.text=quantity.toString()
+            }else{
+                Toast.makeText(this, "You can't add more than $quantity", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        show_product_activity_quantity_minus_button.setOnClickListener(){
+            quantity--
+            if(quantity==0){
+                quantity=1
+            }else{
+                show_product_activity_quantity_text_view.text=quantity.toString()
+            }
+        }
+
+
         show_product_activity_cart_button.setOnClickListener() {
             if (uid == null) {
                 Toast.makeText(this, "You must login to can add item in cart", Toast.LENGTH_SHORT)
                     .show()
             } else {
-                Firebase.database.getReference("users/$uid/cart").child(productNumber).setValue(
-                    ProductInformation(
-                        productNumber,
-                        productName,
-                        productCategory,
-                        productPrice.toDouble(),
-                        1,
-                        productImageLink,
-                        productDescription
-                    )
-                ).addOnSuccessListener {
-                    Toast.makeText(this, "The item is added.", Toast.LENGTH_SHORT).show()
+                if(productQuantity==0){
+                    Toast.makeText(this,"The product is not available for now .", Toast.LENGTH_SHORT).show()
+                }else {
+                    Firebase.database.getReference("users/$uid/cart/$productNumber").setValue(
+                        ProductInformation(
+                            productNumber,
+                            productName,
+                            productCategory,
+                            productPrice.toDouble(),
+                            quantity,
+                            productImageLink,
+                            productDescription
+                        )
+                    ).addOnSuccessListener {
+                        Toast.makeText(this, "The item is added.", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
+
+
 
         show_product_activity_wish_list_button.setOnClickListener() {
             if (uid == null) {
@@ -73,19 +102,19 @@ class ProductShowActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                Firebase.database.getReference("users/$uid/wish_list").child(productName).setValue(
-                    ProductInformation(
-                        productNumber,
-                        productName,
-                        productCategory,
-                        productPrice.toDouble(),
-                        1,
-                        productImageLink,
-                        productDescription
-                    )
-                ).addOnSuccessListener {
-                    Toast.makeText(this, "The item is added.", Toast.LENGTH_SHORT).show()
-                }
+                    Firebase.database.getReference("users/$uid/wish_list").child(productNumber).setValue(
+                        ProductInformation(
+                            productNumber,
+                            productName,
+                            productCategory,
+                            productPrice.toDouble(),
+                            1,
+                            productImageLink,
+                            productDescription
+                        )
+                    ).addOnSuccessListener {
+                        Toast.makeText(this, "The item is added.", Toast.LENGTH_SHORT).show()
+              }
             }
         }
 

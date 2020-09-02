@@ -24,6 +24,7 @@ class UpdateAddressActivity : AppCompatActivity() {
         setContentView(R.layout.activity_update_address)
 
         var uid = Firebase.auth.uid
+        val locationNumber=intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.locationNumber
         var locationType = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.locationType
         var city =intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.city
         var time = intent.getParcelableExtra<AddressInformation>(Database().updateLocation)?.time
@@ -65,7 +66,7 @@ class UpdateAddressActivity : AppCompatActivity() {
             when (checkedID) {
                 R.id.new_address_activity_home_radio_button -> locationType = "Home"
                 R.id.new_address_activity_work_radio_button -> locationType = "Work"
-                R.id.new_address_activity_relax_radio_button -> locationType = "Relax"
+                R.id.new_address_activity_other_radio_button -> locationType = "Other"
             }
         }
 //
@@ -95,8 +96,9 @@ class UpdateAddressActivity : AppCompatActivity() {
             name = update_address_activity_name_edit_text.text.toString()
             phoneNumber = update_address_activity_phone_number_edit_text.text.toString()
 
-                Firebase.database.getReference("users/$uid/addresses/$locationType").setValue(
+                Firebase.database.getReference("users/$uid/addresses/$locationNumber").setValue(
                     AddressInformation(
+                        locationNumber.toString(),
                         lat.toString().toDouble(),
                         long.toString().toDouble(),
                         city.toString(),
@@ -115,7 +117,7 @@ class UpdateAddressActivity : AppCompatActivity() {
         }
 
         update_address_activity_delete_button.setOnClickListener(){
-            Firebase.database.getReference("users/$uid/addresses/${locationType.toString()}").removeValue().addOnSuccessListener {
+            Firebase.database.getReference("users/$uid/addresses/$locationNumber").removeValue().addOnSuccessListener {
                 Toast.makeText(this, "The new location was deleted", Toast.LENGTH_SHORT).show()
                 finish()
             }

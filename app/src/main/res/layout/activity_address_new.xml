@@ -53,12 +53,12 @@
                 android:text="Work" />
 
             <RadioButton
-                android:id="@+id/new_address_activity_relax_radio_button"
+                android:id="@+id/new_address_activity_other_radio_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
 
-                android:text="Relax" />
+                android:text="Other" />
         </RadioGroup>
 
         <EditText
@@ -106,7 +106,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/default_edit_text"
             android:ems="10"
-            android:hint="معلم قريب"
+            android:hint="Close monument"
             android:inputType="textPersonName"
             android:padding="5dp"
             android:paddingStart="15dp"

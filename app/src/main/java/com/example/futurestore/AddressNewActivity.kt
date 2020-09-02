@@ -83,7 +83,7 @@ class AddressNewActivity : AppCompatActivity() {
             when (checkedID) {
                 R.id.new_address_activity_home_radio_button -> locationType = "Home"
                 R.id.new_address_activity_work_radio_button -> locationType = "Work"
-                R.id.new_address_activity_relax_radio_button -> locationType = "Relax"
+                R.id.new_address_activity_other_radio_button -> locationType = "Other"
             }
         }
 
@@ -115,8 +115,10 @@ class AddressNewActivity : AppCompatActivity() {
 
 
             if (district.isNotEmpty() && street.isNotEmpty() && near.isNotEmpty() && name.isNotEmpty() && phoneNumber.isNotEmpty()) {
-                Firebase.database.getReference("users/$uid/addresses/$locationType").setValue(
+                var locationNumber=Firebase.database.getReference("users/$uid/addresses/").push().key.toString()
+                Firebase.database.getReference("users/$uid/addresses/$locationNumber").setValue(
                     AddressInformation(
+                        locationNumber,
                         lat,
                         long,
                         city,
