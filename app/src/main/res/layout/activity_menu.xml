@@ -113,43 +113,43 @@
             android:textColor="@color/Default_font_color_light"
             android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/menu_activity_console_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:background="@color/Default3"
-            android:padding="7dp"
-            android:paddingRight="10dp"
-            android:text="@string/console"
-            android:textAlignment="textStart"
-            android:textColor="@color/Default_font_color_light"
-            android:textSize="24sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/menu_activity_console_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:background="@color/Default3"-->
+<!--            android:padding="7dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:text="@string/console"-->
+<!--            android:textAlignment="textStart"-->
+<!--            android:textColor="@color/Default_font_color_light"-->
+<!--            android:textSize="24sp" />-->
 
-        <TextView
-            android:id="@+id/menu_activity_program_and_game_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:background="@color/Default3"
-            android:padding="7dp"
-            android:paddingRight="10dp"
-            android:text="@string/programs_and_games"
-            android:textAlignment="textStart"
-            android:textColor="@color/Default_font_color_light"
-            android:textSize="24sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/menu_activity_program_and_game_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:background="@color/Default3"-->
+<!--            android:padding="7dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:text="@string/programs_and_games"-->
+<!--            android:textAlignment="textStart"-->
+<!--            android:textColor="@color/Default_font_color_light"-->
+<!--            android:textSize="24sp" />-->
 
-        <TextView
-            android:id="@+id/menu_activity_buy_and_sale_accounts_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/Default3"
-            android:padding="7dp"
-            android:paddingRight="10dp"
-            android:text="@string/buy_and_sale_account"
-            android:textAlignment="textStart"
-            android:textColor="@color/Default_font_color_light"
-            android:textSize="24sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/menu_activity_buy_and_sale_accounts_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/Default3"-->
+<!--            android:padding="7dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:text="@string/buy_and_sale_account"-->
+<!--            android:textAlignment="textStart"-->
+<!--            android:textColor="@color/Default_font_color_light"-->
+<!--            android:textSize="24sp" />-->
 
     </LinearLayout>
 

@@ -29,8 +29,6 @@ class CartPaymentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cart_payment)
         var uid= Firebase.auth.uid.toString()
         var uuid= UUID.randomUUID().toString()
-        Log.d("seya",uuid)
-        Log.d("seya",uuid)
         var userReference=Firebase.database.getReference("users")
         var cartReference=Firebase.database.getReference("users/$uid/cart")
         var addressReference=Firebase.database.getReference("users/$uid/addresses")

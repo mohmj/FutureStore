@@ -312,7 +312,7 @@ class BuilderActivity : AppCompatActivity() {
                                    theProduct.name,
                                    theProduct.category,
                                    theProduct.price,
-                                   theProduct.quantity,
+                                   1,
                                    theProduct.imageLink,
                                    theProduct.description
                                )

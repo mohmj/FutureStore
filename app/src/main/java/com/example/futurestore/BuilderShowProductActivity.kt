@@ -165,7 +165,7 @@ class BuilderShowProductActivity : AppCompatActivity() {
                         CPU_name,
                         CPU_category,
                         CPU_price,
-                        CPU_quantity,
+                        1,
                         CPU_image_link,
                         CPU_description,
                         CPU_CPU_socket_type,
@@ -233,7 +233,7 @@ class BuilderShowProductActivity : AppCompatActivity() {
                                 motherboard_name,
                                 motherboard_category,
                                 motherboard_price,
-                                motherboard_quantity,
+                                1,
                                 motherboard_image_link,
                                 motherboard_description,
                                 motherboard_CPU_socket_type,
@@ -295,7 +295,7 @@ class BuilderShowProductActivity : AppCompatActivity() {
                         GPU_name,
                         GPU_category,
                         GPU_price,
-                        GPU_quantity,
+                        1,
                         GPU_image_link,
                         GPU_description
                     )).addOnSuccessListener {
@@ -351,7 +351,7 @@ class BuilderShowProductActivity : AppCompatActivity() {
                                 RAM_name,
                                 RAM_category,
                                 RAM_price,
-                                RAM_quantity,
+                                1,
                                 RAM_image_link,
                                 RAM_description,
                                 RAM_type_of_RAM,
@@ -408,7 +408,7 @@ class BuilderShowProductActivity : AppCompatActivity() {
                         memory_name,
                         memory_category,
                         memory_price,
-                        memory_quantity,
+                        1,
                         memory_image_link,
                         memory_description
                     )).addOnSuccessListener {
@@ -457,7 +457,7 @@ class BuilderShowProductActivity : AppCompatActivity() {
                         cooler_name,
                         cooler_category,
                         cooler_price,
-                        cooler_quantity,
+                        1,
                         cooler_image_link,
                         cooler_description
                     )).addOnSuccessListener {
@@ -508,7 +508,7 @@ class BuilderShowProductActivity : AppCompatActivity() {
                         case_name,
                         case_category,
                         case_price,
-                        case_quantity,
+                        1,
                         case_image_link,
                         case_description,
                         case_type,

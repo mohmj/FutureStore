@@ -30,8 +30,8 @@ class CartChooseAddressActivity : AppCompatActivity() {
         cart_choose_address_activity.layoutManager =
             StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
 
-        var oneTotal = intent.getStringExtra(Database().cartTotal)
-        Log.d("tasty", oneTotal.toString())
+        var cartTotal = intent.getStringExtra(Database().cartTotal).toString().toDouble()
+
 
         var reference = Firebase.database.getReference("users/${uid.toString()}/addresses")
 //        reference.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -82,7 +82,7 @@ class CartChooseAddressActivity : AppCompatActivity() {
                     var intent= Intent(view.context,CartSummaryActivity::class.java)
                     var intenty=item as ShowLocationAdapter
                     intent.putExtra(Database().cartLocation,intenty.location)
-                    intent.putExtra(Database().cartTotal,oneTotal.toString())
+                    intent.putExtra(Database().cartTotal,cartTotal.toString())
                     startActivity(intent)
                 }
             }
@@ -97,7 +97,7 @@ class CartChooseAddressActivity : AppCompatActivity() {
                     var intent= Intent(view.context,CartSummaryActivity::class.java)
                     var intenty=item as ShowLocationAdapter
                     intent.putExtra(Database().cartLocation,intenty.location)
-                    intent.putExtra(Database().cartTotal,oneTotal.toString())
+                    intent.putExtra(Database().cartTotal,cartTotal.toString())
                     startActivity(intent)
                 }
             }

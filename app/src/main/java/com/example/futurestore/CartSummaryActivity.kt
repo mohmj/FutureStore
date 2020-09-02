@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_cart_summary.*
+import java.math.RoundingMode
 
 class CartSummaryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,9 +28,10 @@ class CartSummaryActivity : AppCompatActivity() {
         var adapter=GroupAdapter<ViewHolder>()
         cart_summary_recycler_view.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         var total=intent.getStringExtra(Database().cartTotal)
-        var subtotal=total!!.toDouble()*0.85
-        var VAT=total!!.toDouble()*0.15
+        var subtotal=(total!!.toDouble()*0.85).toBigDecimal().setScale(2, RoundingMode.UP).toDouble()
+        var VAT=(total!!.toDouble()*0.15).toBigDecimal().setScale(2, RoundingMode.UP).toDouble()
         var locationType=intent.getParcelableExtra<AddressInformation>(Database().cartLocation)?.locationType.toString()
+        var locationNumber=intent.getParcelableExtra<AddressInformation>(Database().cartLocation)?.locationNumber.toString()
         var city=intent.getParcelableExtra<AddressInformation>(Database().cartLocation)?.city
         var district=intent.getParcelableExtra<AddressInformation>(Database().cartLocation)?.district
         var street=intent.getParcelableExtra<AddressInformation>(Database().cartLocation)?.street
@@ -61,7 +63,7 @@ class CartSummaryActivity : AppCompatActivity() {
         cart_summery_activity_button.setOnClickListener(){
             var intent= Intent(this,CartPaymentActivity::class.java)
             intent.putExtra(Database().cartTotal,total)
-            intent.putExtra(Database().cartLocation,locationType)
+            intent.putExtra(Database().cartLocation,locationNumber)
             startActivity(intent)
         }
     }

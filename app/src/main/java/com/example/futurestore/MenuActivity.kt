@@ -81,15 +81,15 @@ class MenuActivity : AppCompatActivity() {
             menu_activity_laptop_button.setOnClickListener(){
                 category(category.laptop,resources.getString(R.string.laptop))
             }
-            menu_activity_console_button.setOnClickListener(){
-                category(category.console,resources.getString(R.string.console))
-            }
-            menu_activity_program_and_game_button.setOnClickListener(){
-                category(category.programs_and_games,resources.getString(R.string.programs_and_games))
-            }
-            menu_activity_buy_and_sale_accounts_button.setOnClickListener(){
-                startActivity(Intent(this,AccountsActivity::class.java))
-            }
+//            menu_activity_console_button.setOnClickListener(){
+//                category(category.console,resources.getString(R.string.console))
+//            }
+//            menu_activity_program_and_game_button.setOnClickListener(){
+//                category(category.programs_and_games,resources.getString(R.string.programs_and_games))
+//            }
+//            menu_activity_buy_and_sale_accounts_button.setOnClickListener(){
+//                startActivity(Intent(this,AccountsActivity::class.java))
+//            }
         menu_activity_web_button.setOnClickListener(){
             val url = "http://www.softwareclinics.com/"
             val intent = Intent(Intent.ACTION_VIEW)

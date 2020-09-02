@@ -79,8 +79,7 @@ class CartShowProductActivity : AppCompatActivity() {
 
 
         cart_show_product_activity_delete_button.setOnClickListener(){
-
-            var reference= Firebase.database.getReference("users/$uid/cart/$productName")
+            var reference= Firebase.database.getReference("users/$uid/cart/$productNumber")
             reference.removeValue().addOnSuccessListener {
                 Toast.makeText(this,"The item is deletes",Toast.LENGTH_SHORT).show()
                 finish()
@@ -90,7 +89,7 @@ class CartShowProductActivity : AppCompatActivity() {
         }
 
         cart_show_product_activity_add_wish_list_button.setOnClickListener(){
-            Firebase.database.getReference("users/$uid/wish_list").child(productName).setValue(
+            Firebase.database.getReference("users/$uid/wish_list").child(productNumber).setValue(
                 ProductInformation(
                     productNumber,
                     productName,
